@@ -1,0 +1,728 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="float属性设计的初衷：文字环绕效果img {   width: 100px;   height: 100px;   float: left; } float的破坏性：让父元素高度塌陷 这其实是float的标准而不是bug文字环绕效果就是依赖高度塌陷来实现的上个例子中，图片设置float,那么父级高度塌陷，脱离了父级的包裹，它下面的文字就可以包围在它周围了">
+<meta property="og:type" content="article">
+<meta property="og:title" content="深入理解float">
+<meta property="og:url" content="http://yoursite.com/2016/08/20/深入理解float/index.html">
+<meta property="og:site_name" content="博客">
+<meta property="og:description" content="float属性设计的初衷：文字环绕效果img {   width: 100px;   height: 100px;   float: left; } float的破坏性：让父元素高度塌陷 这其实是float的标准而不是bug文字环绕效果就是依赖高度塌陷来实现的上个例子中，图片设置float,那么父级高度塌陷，脱离了父级的包裹，它下面的文字就可以包围在它周围了">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-20T13:31:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="深入理解float">
+<meta name="twitter:description" content="float属性设计的初衷：文字环绕效果img {   width: 100px;   height: 100px;   float: left; } float的破坏性：让父元素高度塌陷 这其实是float的标准而不是bug文字环绕效果就是依赖高度塌陷来实现的上个例子中，图片设置float,那么父级高度塌陷，脱离了父级的包裹，它下面的文字就可以包围在它周围了">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/08/20/深入理解float/"/>
+
+
+
+
+
+  <title>深入理解float | 博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/08/20/深入理解float/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="KxinLin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">深入理解float</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-08-20T11:25:54+08:00">
+                2016-08-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h5 id="float属性设计的初衷：文字环绕效果"><a href="#float属性设计的初衷：文字环绕效果" class="headerlink" title="float属性设计的初衷：文字环绕效果"></a>float属性设计的初衷：文字环绕效果</h5><pre><code>img {
+  width: 100px;
+  height: 100px;
+  float: left;
+}
+</code></pre><h5 id="float的破坏性：让父元素高度塌陷-这其实是float的标准而不是bug"><a href="#float的破坏性：让父元素高度塌陷-这其实是float的标准而不是bug" class="headerlink" title="float的破坏性：让父元素高度塌陷 这其实是float的标准而不是bug"></a>float的破坏性：让父元素高度塌陷 这其实是float的标准而不是bug</h5><p>文字环绕效果就是依赖高度塌陷来实现的<br>上个例子中，图片设置float,那么父级高度塌陷，脱离了父级的包裹，它下面的文字<br>就可以包围在它周围了</p>
+<a id="more"></a>
+<h5 id="如何降低float带来的影响：清除浮动-浮动其实还是存在的，正确说法应是清楚浮动带来的影响"><a href="#如何降低float带来的影响：清除浮动-浮动其实还是存在的，正确说法应是清楚浮动带来的影响" class="headerlink" title="如何降低float带来的影响：清除浮动(浮动其实还是存在的，正确说法应是清楚浮动带来的影响)"></a>如何降低float带来的影响：清除浮动(浮动其实还是存在的，正确说法应是清楚浮动带来的影响)</h5><ol>
+<li>clear</li>
+<li>BFC/haslayout</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">//权衡利弊后的方法</div><div class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</div><div class="line">  <span class="attribute">content</span>: <span class="string">''</span>;</div><div class="line">  <span class="attribute">display</span>: block;</div><div class="line">  <span class="attribute">height</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">overflow</span>: hidden;</div><div class="line">  <span class="attribute">clear</span>: both;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.clear</span> &#123;</div><div class="line">  *zoom: 1;  //为兼容ie6</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">clearfix</span>应用在包含浮动子元素的</div><div class="line">父级元素上面，不要滥用</div><div class="line"></div><div class="line">//更好的方法</div><div class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</div><div class="line">  <span class="attribute">content</span>: <span class="string">''</span>;</div><div class="line">  <span class="attribute">display</span>: table;</div><div class="line">  <span class="attribute">clear</span>: both;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.clear</span> &#123;</div><div class="line">  *zoom: 1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h5 id="float的-block化和去空格化"><a href="#float的-block化和去空格化" class="headerlink" title="float的 block化和去空格化"></a>float的 <code>block化</code>和<code>去空格化</code></h5><ol>
+<li>设置float后，元素display属性会变为block</li>
+<li>float的去空格化的原理是文字环绕，当四个button标签</li>
+</ol>
+<p>由于html换行导致的空隙会产生空格，设置float后可以去除<br>间隙导致的空格</p>
+<p>span会紧跟在后面</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">style</span>=<span class="string">"float: left;"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">style</span>=<span class="string">"float: left;"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">style</span>=<span class="string">"float: left;"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>111<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>这里空格是自己定义的，设置float后，这些空格会跟随在后面，span跟随在空格后面</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">style</span>=<span class="string">"float: left;"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">button</span>&gt;</span>&amp;nbsp;<span class="tag">&lt;<span class="name">button</span> <span class="attr">style</span>=<span class="string">"float: left;"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">button</span>&gt;</span>&amp;nbsp;<span class="tag">&lt;<span class="name">button</span> <span class="attr">style</span>=<span class="string">"float: left;"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">button</span>&gt;</span>&amp;nbsp;<span class="tag">&lt;<span class="name">span</span>&gt;</span>111<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>两者区别就是<code>&amp;nbsp;</code>是占据空间的，而标签之间的空格和换行是不占据的，所以<code>&amp;nbsp;</code>可以被看到，<br>前者产生的空隙不能被看到</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/08/19/javascript中的变量类型/" rel="next" title="javascript中的变量类型">
+                <i class="fa fa-chevron-left"></i> javascript中的变量类型
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/08/20/鼠标事件/" rel="prev" title="鼠标事件">
+                鼠标事件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="KxinLin" />
+          <p class="site-author-name" itemprop="name">KxinLin</p>
+           
+              <p class="site-description motion-element" itemprop="description">每隔一段时间把笔记整理到这里来</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">67</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#float属性设计的初衷：文字环绕效果"><span class="nav-number">1.</span> <span class="nav-text">float属性设计的初衷：文字环绕效果</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#float的破坏性：让父元素高度塌陷-这其实是float的标准而不是bug"><span class="nav-number">2.</span> <span class="nav-text">float的破坏性：让父元素高度塌陷 这其实是float的标准而不是bug</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#如何降低float带来的影响：清除浮动-浮动其实还是存在的，正确说法应是清楚浮动带来的影响"><span class="nav-number">3.</span> <span class="nav-text">如何降低float带来的影响：清除浮动(浮动其实还是存在的，正确说法应是清楚浮动带来的影响)</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#float的-block化和去空格化"><span class="nav-number">4.</span> <span class="nav-text">float的 block化和去空格化</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KxinLin</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

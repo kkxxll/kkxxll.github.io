@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="原生js取宽高window document 区别window对象表示浏览器中打开的窗口(包括菜单栏) window可以省略,window.console.log(1)等价于console.log(1) document对象是浏览器的html文档 是window的一部分，即window除去菜单栏剩下的部分 window.document.body 等价于 document.body">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浏览器中各种宽高">
+<meta property="og:url" content="http://yoursite.com/2016/06/20/浏览器中各种宽高/index.html">
+<meta property="og:site_name" content="博客">
+<meta property="og:description" content="原生js取宽高window document 区别window对象表示浏览器中打开的窗口(包括菜单栏) window可以省略,window.console.log(1)等价于console.log(1) document对象是浏览器的html文档 是window的一部分，即window除去菜单栏剩下的部分 window.document.body 等价于 document.body">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-20T13:25:44.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="浏览器中各种宽高">
+<meta name="twitter:description" content="原生js取宽高window document 区别window对象表示浏览器中打开的窗口(包括菜单栏) window可以省略,window.console.log(1)等价于console.log(1) document对象是浏览器的html文档 是window的一部分，即window除去菜单栏剩下的部分 window.document.body 等价于 document.body">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/06/20/浏览器中各种宽高/"/>
+
+
+
+
+
+  <title>浏览器中各种宽高 | 博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/20/浏览器中各种宽高/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="KxinLin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">浏览器中各种宽高</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-06-20T11:31:12+08:00">
+                2016-06-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/css/" itemprop="url" rel="index">
+                    <span itemprop="name">css</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="原生js取宽高"><a href="#原生js取宽高" class="headerlink" title="原生js取宽高"></a>原生js取宽高</h4><h6 id="window-document-区别"><a href="#window-document-区别" class="headerlink" title="window document 区别"></a>window document 区别</h6><pre><code>window对象表示浏览器中打开的窗口(包括菜单栏)
+window可以省略,window.console.log(1)等价于console.log(1)
+document对象是浏览器的html文档
+是window的一部分，即window除去菜单栏剩下的部分
+window.document.body 等价于 document.body
+</code></pre><a id="more"></a>
+<h6 id="window-location-document-location-window-document-location"><a href="#window-location-document-location-window-document-location" class="headerlink" title="window.location===document.location===window.document.location"></a>window.location===document.location===window.document.location</h6><p>等价的，无差别</p>
+<h6 id="window-innerHeight-window-outerHeight"><a href="#window-innerHeight-window-outerHeight" class="headerlink" title="window.innerHeight window.outerHeight"></a>window.innerHeight window.outerHeight</h6><p>前者指的是即document对象的高度,不包括控制台和浏览器工具栏</p>
+<p>后者指的是整个浏览器窗口的高度，包括工具栏等</p>
+<h6 id="window-screen表示用户的屏幕"><a href="#window-screen表示用户的屏幕" class="headerlink" title="window.screen表示用户的屏幕"></a>window.screen表示用户的屏幕</h6><p>screen.height 整个屏幕高度</p>
+<p>screen.availHeight 屏幕高度除去桌面导航栏 即屏幕可利用高度</p>
+<p>screenTop  浏览器距离屏幕顶部的距离 与screenX等价</p>
+<h6 id="clientWidth-clientHeight-（document-body-clientWidth）"><a href="#clientWidth-clientHeight-（document-body-clientWidth）" class="headerlink" title="clientWidth clientHeight （document.body.clientWidth）"></a>clientWidth clientHeight （document.body.clientWidth）</h6><p>表示元素可视部分宽度和高度，即padding＋content（content指元素的height,width）</p>
+<p>有滚动条时候需要注意，例如某个div长宽200px，overflow:auto<br>在里面添加字直到滚动条出现时，clientWidth要减去滚动轴宽度，mac下和windows下不同</p>
+<p>mac下会对滚动轴进行隐藏处理，windows不会</p>
+<h6 id="总结："><a href="#总结：" class="headerlink" title="总结："></a>总结：</h6><p>无padding无滚动：clientWidth = style.width</p>
+<p>有padding无滚动：clientWidth = style.width+style.padding(左右)</p>
+<p>有pading有滚动且滚动条显示：clientWidth = style.width+style.padding(左右)－滚动条宽度</p>
+<h6 id="clientLeft-clientTop"><a href="#clientLeft-clientTop" class="headerlink" title="clientLeft clientTop"></a>clientLeft clientTop</h6><p>前者表示属性属性的border-left的宽度</p>
+<h6 id="document-body-offsetWidth-offsetHeight"><a href="#document-body-offsetWidth-offsetHeight" class="headerlink" title="document.body.offsetWidth/offsetHeight"></a>document.body.offsetWidth/offsetHeight</h6><p>offsetWidth表示border+padding+content</p>
+<p>该属性和内部的内容是否超出元素的大小无关，只和本来设定的数据有关</p>
+<h6 id="小结："><a href="#小结：" class="headerlink" title="小结："></a>小结：</h6><ul>
+<li>无padding无滚动无border<pre><code>offsetWidth=style.width=clientWidth
+</code></pre></li>
+<li>有padding无滚动有border<pre><code>offsetWidth=clientWidth+border
+offsetWidth=style.width+padding+boder
+</code></pre></li>
+<li>有padding有滚动有border<pre><code>offsetWidth=clientWidth+滚动+border
+offsetWidth=style.width+padding+border
+</code></pre></li>
+</ul>
+<h6 id="document-body-offsetLeft-offsetTop"><a href="#document-body-offsetLeft-offsetTop" class="headerlink" title="document.body.offsetLeft/offsetTop"></a>document.body.offsetLeft/offsetTop</h6><p>与offsetParent有关</p>
+<p>当前元素的父级元素没有进行css定位(position:absolute/relative),则offsetParsent为body</p>
+<p>当前元素的父级元素有css定位，则offsetParsent为父级元素</p>
+<h6 id="ie6-7"><a href="#ie6-7" class="headerlink" title="ie6/7"></a>ie6/7</h6><p>offsetLeft = offsetParent的padding+当前元素的margin</p>
+<h6 id="ie8-9-10-chrome"><a href="#ie8-9-10-chrome" class="headerlink" title="ie8/9/10 chrome"></a>ie8/9/10 chrome</h6><p>offsetLeft = offsetParent的margin、border、padding+当前<br>元素的margin</p>
+<h6 id="firefox"><a href="#firefox" class="headerlink" title="firefox"></a>firefox</h6><p>offsetLeft = offsetParent的padding、margin+当前元素的margin</p>
+<h6 id="document-body-scrollWidth-scrollHeight"><a href="#document-body-scrollWidth-scrollHeight" class="headerlink" title="document.body.scrollWidth/scrollHeight"></a>document.body.scrollWidth/scrollHeight</h6><p><code>在body中</code></p>
+<p>给定宽度小于浏览器窗口时，scrollWidth通常是浏览器窗口的宽度</p>
+<p>给定宽度大于浏览器窗口时，且内容小于给定宽，scrollWidth为其给定的宽度加上padding、border、marign</p>
+<p>给定宽度大于浏览器窗口时，且内容大于给定宽，scrollWidth为其内容的宽度加上padding、border、marign</p>
+<p><code>在元素中</code></p>
+<p>无滚动轴时<br>scrollWidth=clientWidth=style.width+style.padding</p>
+<p>有滚动轴时<br>scrollWidth=实际内容的宽度+padding</p>
+<h6 id="scrollTop-scrollLeft-可读写的"><a href="#scrollTop-scrollLeft-可读写的" class="headerlink" title="scrollTop scrollLeft 可读写的"></a>scrollTop scrollLeft 可读写的</h6><p>表示元素卷起的宽度高度</p>
+<pre><code>document //document对象
+document.documentElement //html
+document.body   //body
+他们对应的是祖辈父辈子悲的关系
+
+clientX clientY 相对于浏览器可视区左上角的距离
+screenX clientY 相对于设备屏幕左上角的距离
+offsetX offsetY 相对于事件源左上角的距离（例如某个元素触发的事件）
+pageX   pageY   相对于整个网页左上角的距离 （例如在滚动页面时，相对于整个文档的坐标）
+X       Y       相对于用css动态定位的最内层包容元素
+</code></pre><p>var divHeight = div.style.height;//如果div没有内联设置height，这里取不到值</p>
+<h4 id="jquery取宽高"><a href="#jquery取宽高" class="headerlink" title="jquery取宽高"></a>jquery取宽高</h4><h6 id="width-height-可读写的"><a href="#width-height-可读写的" class="headerlink" title=".width() .height()  //可读写的"></a>.width() .height()  //可读写的</h6><p>对于window、document:传值无效</p>
+<p>对于元素:可以传入一个值或一个函数</p>
+<p>.width(value)</p>
+<p>.windth(function(){})</p>
+<h6 id="举例"><a href="#举例" class="headerlink" title="举例"></a>举例</h6><p><code>特殊元素:</code></p>
+<pre><code>window.height()=window.innerHeight()=window.outerHeight()=do
+cument.height()=document.innerHeight()=document.outerHeight()
+
+window.height()//可是区域高度  与margin、padding、border都无关
+
+document.height()//文档区域高度
+</code></pre><p><code>普通元素:</code></p>
+<pre><code>设置box-sizing: border-box;  要减去border和padding
+content的heitht()
+</code></pre><h6 id="width-与-css-“width”-区别"><a href="#width-与-css-“width”-区别" class="headerlink" title="width()与 css(“width”) 区别"></a>width()与 css(“width”) 区别</h6><p>前者没有单位，后者有</p>
+<h6 id="innerWidth-innerHeight-可读写的"><a href="#innerWidth-innerHeight-可读写的" class="headerlink" title="innerWidth()  .innerHeight()  //可读写的"></a>innerWidth()  .innerHeight()  //可读写的</h6><pre><code>普通元素： .innerWidth()=width()+padding
+对于window、document:传值无效
+对于元素:可以传入一个值或一个函数
+</code></pre><h6 id="outerWidth-bool-outerHeight-可读写的"><a href="#outerWidth-bool-outerHeight-可读写的" class="headerlink" title="outerWidth(bool)  .outerHeight() //可读写的"></a>outerWidth(bool)  .outerHeight() //可读写的</h6><pre><code>普通元素： .outerWidth()=width()+padding+border
+对于window、document:传值无效
+对于元素:可以传入一个值或一个函数
+bool为true 要加上margin
+</code></pre><h6 id="scrollTop-scrollLeft"><a href="#scrollTop-scrollLeft" class="headerlink" title="scrollTop()  .scrollLeft()"></a>scrollTop()  .scrollLeft()</h6><pre><code>卷入的距离
+$(&apos;body&apos;).scroll(function() {
+  console.log($(this).scrollTop());
+})
+</code></pre><h6 id="offset"><a href="#offset" class="headerlink" title="offset()"></a>offset()</h6><pre><code>相对于document的当前坐标值（相对于body左上角）
+不包括该元素的margin padding
+</code></pre><h6 id="position"><a href="#position" class="headerlink" title="position()"></a>position()</h6><pre><code>相对于offset()的坐标
+元素所占有的位置相对于目标的坐标（占有的位置包括margin padding）
+父级元素有设置position则 结果为父级元素的padding
+若本身也设置了position则结果为 本身的父级的padding加上本身的偏移
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/05/21/5种方式定义line-height/" rel="next" title="5种方式定义line-height">
+                <i class="fa fa-chevron-left"></i> 5种方式定义line-height
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2016/07/19/开发前文件配置/" rel="prev" title="开发前文件配置">
+                开发前文件配置 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="KxinLin" />
+          <p class="site-author-name" itemprop="name">KxinLin</p>
+           
+              <p class="site-description motion-element" itemprop="description">每隔一段时间把笔记整理到这里来</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">67</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#原生js取宽高"><span class="nav-number">1.</span> <span class="nav-text">原生js取宽高</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#window-document-区别"><span class="nav-number">1.0.1.</span> <span class="nav-text">window document 区别</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#window-location-document-location-window-document-location"><span class="nav-number">1.0.2.</span> <span class="nav-text">window.location===document.location===window.document.location</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#window-innerHeight-window-outerHeight"><span class="nav-number">1.0.3.</span> <span class="nav-text">window.innerHeight window.outerHeight</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#window-screen表示用户的屏幕"><span class="nav-number">1.0.4.</span> <span class="nav-text">window.screen表示用户的屏幕</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#clientWidth-clientHeight-（document-body-clientWidth）"><span class="nav-number">1.0.5.</span> <span class="nav-text">clientWidth clientHeight （document.body.clientWidth）</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#总结："><span class="nav-number">1.0.6.</span> <span class="nav-text">总结：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#clientLeft-clientTop"><span class="nav-number">1.0.7.</span> <span class="nav-text">clientLeft clientTop</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#document-body-offsetWidth-offsetHeight"><span class="nav-number">1.0.8.</span> <span class="nav-text">document.body.offsetWidth/offsetHeight</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#小结："><span class="nav-number">1.0.9.</span> <span class="nav-text">小结：</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#document-body-offsetLeft-offsetTop"><span class="nav-number">1.0.10.</span> <span class="nav-text">document.body.offsetLeft/offsetTop</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#ie6-7"><span class="nav-number">1.0.11.</span> <span class="nav-text">ie6/7</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#ie8-9-10-chrome"><span class="nav-number">1.0.12.</span> <span class="nav-text">ie8/9/10 chrome</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#firefox"><span class="nav-number">1.0.13.</span> <span class="nav-text">firefox</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#document-body-scrollWidth-scrollHeight"><span class="nav-number">1.0.14.</span> <span class="nav-text">document.body.scrollWidth/scrollHeight</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#scrollTop-scrollLeft-可读写的"><span class="nav-number">1.0.15.</span> <span class="nav-text">scrollTop scrollLeft 可读写的</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#jquery取宽高"><span class="nav-number">2.</span> <span class="nav-text">jquery取宽高</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#width-height-可读写的"><span class="nav-number">2.0.1.</span> <span class="nav-text">.width() .height()  //可读写的</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#举例"><span class="nav-number">2.0.2.</span> <span class="nav-text">举例</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#width-与-css-“width”-区别"><span class="nav-number">2.0.3.</span> <span class="nav-text">width()与 css(“width”) 区别</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#innerWidth-innerHeight-可读写的"><span class="nav-number">2.0.4.</span> <span class="nav-text">innerWidth()  .innerHeight()  //可读写的</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#outerWidth-bool-outerHeight-可读写的"><span class="nav-number">2.0.5.</span> <span class="nav-text">outerWidth(bool)  .outerHeight() //可读写的</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#scrollTop-scrollLeft"><span class="nav-number">2.0.6.</span> <span class="nav-text">scrollTop()  .scrollLeft()</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#offset"><span class="nav-number">2.0.7.</span> <span class="nav-text">offset()</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#position"><span class="nav-number">2.0.8.</span> <span class="nav-text">position()</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KxinLin</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

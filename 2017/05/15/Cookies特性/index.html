@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="前端数据存储 后端通过http设置cookies 请求时前端通过http头传给后端 前端可读写cookies 遵守同源策略 (协议域名端口)  当cookies设置以后，那么站内的任何一个请求都会携带这个网站的所有cookies 若是缓存的文件，则清楚缓存后，就可以看到cookies 控制台中通过document.cookie可以获取cookie">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Cookies特性">
+<meta property="og:url" content="http://yoursite.com/2017/05/15/Cookies特性/index.html">
+<meta property="og:site_name" content="博客">
+<meta property="og:description" content="前端数据存储 后端通过http设置cookies 请求时前端通过http头传给后端 前端可读写cookies 遵守同源策略 (协议域名端口)  当cookies设置以后，那么站内的任何一个请求都会携带这个网站的所有cookies 若是缓存的文件，则清楚缓存后，就可以看到cookies 控制台中通过document.cookie可以获取cookie">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-20T13:39:49.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Cookies特性">
+<meta name="twitter:description" content="前端数据存储 后端通过http设置cookies 请求时前端通过http头传给后端 前端可读写cookies 遵守同源策略 (协议域名端口)  当cookies设置以后，那么站内的任何一个请求都会携带这个网站的所有cookies 若是缓存的文件，则清楚缓存后，就可以看到cookies 控制台中通过document.cookie可以获取cookie">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/05/15/Cookies特性/"/>
+
+
+
+
+
+  <title>Cookies特性 | 博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/05/15/Cookies特性/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="KxinLin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Cookies特性</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-15T22:14:15+08:00">
+                2017-05-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/本地存储/" itemprop="url" rel="index">
+                    <span itemprop="name">本地存储</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li>前端数据存储</li>
+<li>后端通过http设置cookies</li>
+<li>请求时前端通过http头传给后端</li>
+<li>前端可读写cookies</li>
+<li>遵守同源策略 (协议域名端口)</li>
+</ul>
+<p>当cookies设置以后，那么站内的任何一个请求都会携带这个网站的所有cookies</p>
+<p>若是缓存的文件，则清楚缓存后，就可以看到cookies</p>
+<p>控制台中通过<code>document.cookie</code>可以获取cookie</p>
+<a id="more"></a>
+<p>不同域名下的cookies不能混用，每个cookie都有有效期，过期了就失效</p>
+<p>可以为不同url的层级设置不同的cookie  /a.com/login   /a.com 这两个路径下可能有同名的cookie</p>
+<p>http-only 指cookie只能被http协议用</p>
+<p>secure 表示cookie是否只能在https协议中用</p>
+<h6 id="设置cookie过期时间"><a href="#设置cookie过期时间" class="headerlink" title="设置cookie过期时间"></a>设置cookie过期时间</h6><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var now = new Date();</div><div class="line">var gmt = now.toGMTString();</div><div class="line">document.cookie = <span class="string">'aaa=1; expires=gmt'</span>;</div></pre></td></tr></table></figure>
+<h6 id="cookies的作用"><a href="#cookies的作用" class="headerlink" title="cookies的作用"></a>cookies的作用</h6><p>登录用户凭证</p>
+<p>直接使用用户ID作为cookie使用巨大安全隐患的</p>
+<p>因为用户可以修改cookie从而篡改用户ID,继而冒充该用户身份进行</p>
+<p>用户行为操作</p>
+<p>建议使用 用户ID+签名（使用node的crypt模块）</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> crypt = &#123;&#125;;</div><div class="line"><span class="keyword">const</span> KEY = <span class="string">'#90(@#$%90kjlfd'</span>;<span class="comment">//越复杂越好</span></div><div class="line">crypt.cryptUserId = <span class="function"><span class="keyword">function</span>(<span class="params">userId</span>) </span>&#123;</div><div class="line">    <span class="keyword">var</span> crypto = <span class="built_in">require</span>(<span class="string">'crypto'</span>);</div><div class="line">    <span class="keyword">var</span> sign = createHmac(<span class="string">'sha256'</span>, KEY);</div><div class="line">    sign.update(userId + <span class="string">''</span>);<span class="comment">//对userId进行签名 由于update方法接收字符串，所以加上空字符串</span></div><div class="line">    <span class="keyword">return</span> sign.digest(<span class="string">'hex'</span>);<span class="comment">//以十六进制转换</span></div><div class="line">&#125;;</div><div class="line"><span class="built_in">module</span>.exports = crypt;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> crypto = <span class="built_in">require</span>(<span class="string">'crypto'</span>);</div><div class="line"><span class="keyword">const</span> KEY = <span class="string">'#90(@#$%90kjlfd'</span>;</div><div class="line"><span class="comment">// 加密</span></div><div class="line"><span class="keyword">var</span> cipher = crypto.createCipher(<span class="string">'des'</span>, KEY);</div><div class="line"><span class="keyword">var</span> text = cipher.update(<span class="string">'hello kk'</span>, <span class="string">'utf8'</span>, <span class="string">'hex'</span>);</div><div class="line">text += cipher.fial(<span class="string">'hex'</span>);</div><div class="line"><span class="built_in">console</span>.log(text)</div><div class="line"><span class="comment">// 解密</span></div><div class="line"><span class="keyword">var</span> decipher = crypto.createCipher(<span class="string">'des'</span>, KEY);</div><div class="line"><span class="keyword">var</span> originalText = decipher.update(text, <span class="string">'hex'</span>, <span class="string">'utf8'</span>);</div><div class="line">originalText += decipher.fial(<span class="string">'utf8'</span>);</div><div class="line"><span class="built_in">console</span>.log(originalText)</div></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/05/09/js事件/" rel="next" title="js事件">
+                <i class="fa fa-chevron-left"></i> js事件
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/05/19/gulp自动化构建工具/" rel="prev" title="gulp自动化构建工具">
+                gulp自动化构建工具 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="KxinLin" />
+          <p class="site-author-name" itemprop="name">KxinLin</p>
+           
+              <p class="site-description motion-element" itemprop="description">每隔一段时间把笔记整理到这里来</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">67</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-6"><a class="nav-link" href="#设置cookie过期时间"><span class="nav-number">1.</span> <span class="nav-text">设置cookie过期时间</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#cookies的作用"><span class="nav-number">2.</span> <span class="nav-text">cookies的作用</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KxinLin</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

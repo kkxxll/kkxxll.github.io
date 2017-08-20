@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="###开始!!： &amp;lt;html lang=&amp;quot;en&amp;quot; ng-app=&amp;quot;app&amp;quot;&amp;gt; 告诉浏览器开始启动angular,以下例子若没有特殊声明,则默认包含这段代码 控制器：var app = angular.module(&amp;quot;app&amp;quot;, []); app.controller(&amp;quot;A&amp;quot;, [&amp;apos;$scope&amp;a">
+<meta property="og:type" content="article">
+<meta property="og:title" content="angularjs初学">
+<meta property="og:url" content="http://yoursite.com/2017/06/08/angularjs初学/index.html">
+<meta property="og:site_name" content="博客">
+<meta property="og:description" content="###开始!!： &amp;lt;html lang=&amp;quot;en&amp;quot; ng-app=&amp;quot;app&amp;quot;&amp;gt; 告诉浏览器开始启动angular,以下例子若没有特殊声明,则默认包含这段代码 控制器：var app = angular.module(&amp;quot;app&amp;quot;, []); app.controller(&amp;quot;A&amp;quot;, [&amp;apos;$scope&amp;a">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://img.mukewang.com/58cb388c0001eb9612800720.jpg">
+<meta property="og:updated_time" content="2017-08-20T13:38:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="angularjs初学">
+<meta name="twitter:description" content="###开始!!： &amp;lt;html lang=&amp;quot;en&amp;quot; ng-app=&amp;quot;app&amp;quot;&amp;gt; 告诉浏览器开始启动angular,以下例子若没有特殊声明,则默认包含这段代码 控制器：var app = angular.module(&amp;quot;app&amp;quot;, []); app.controller(&amp;quot;A&amp;quot;, [&amp;apos;$scope&amp;a">
+<meta name="twitter:image" content="http://img.mukewang.com/58cb388c0001eb9612800720.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/06/08/angularjs初学/"/>
+
+
+
+
+
+  <title>angularjs初学 | 博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/06/08/angularjs初学/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="KxinLin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">angularjs初学</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-06-08T11:21:41+08:00">
+                2017-06-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/angularjs/" itemprop="url" rel="index">
+                    <span itemprop="name">angularjs</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>###开始!!：</p>
+<p><code>&lt;html lang=&quot;en&quot; ng-app=&quot;app&quot;&gt;</code></p>
+<p>告诉浏览器开始启动angular,<strong>以下例子若没有特殊声明</strong>,则默认包含这段代码</p>
+<h4 id="控制器："><a href="#控制器：" class="headerlink" title="控制器："></a>控制器：</h4><pre><code>var app = angular.module(&quot;app&quot;, []);
+app.controller(&quot;A&quot;, [&apos;$scope&apos;, function($scope) {
+  $scope.greeting = {
+    text: &apos;hello kk&apos;
+  }
+}])
+</code></pre><hr>
+<pre><code>&lt;div ng-controller=&quot;A&quot;&gt;
+  &lt;p&gt;{{greeting.text}}&lt;/p&gt;
+&lt;/div&gt;
+</code></pre><a id="more"></a>
+<h5 id="控制器-Controller-的实现"><a href="#控制器-Controller-的实现" class="headerlink" title="控制器(Controller)的实现"></a>控制器(Controller)的实现</h5><h6 id="可以创建多个控制器，若控制器之间有公用的部分，则可以抽出来成服务Service"><a href="#可以创建多个控制器，若控制器之间有公用的部分，则可以抽出来成服务Service" class="headerlink" title="可以创建多个控制器，若控制器之间有公用的部分，则可以抽出来成服务Service"></a>可以创建多个控制器，若控制器之间有公用的部分，则可以抽出来成服务Service</h6><p>  <img src="http://img.mukewang.com/58cb388c0001eb9612800720.jpg" alt="图片"></p>
+<h6 id="以下是通过功用控制器实现-servive后面介绍"><a href="#以下是通过功用控制器实现-servive后面介绍" class="headerlink" title="以下是通过功用控制器实现,servive后面介绍"></a>以下是通过功用控制器实现,servive后面介绍</h6><pre><code>&lt;div ng-controller=&quot;CommonController&quot;&gt;
+  &lt;div ng-controller=&quot;Controller1&quot;&gt;
+    &lt;p&gt;{{greeting.text}}&lt;/p&gt;
+    &lt;button ng-click=&quot;test1()&quot;&gt;test1&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div ng-controller=&quot;Controller2&quot;&gt;
+    &lt;p&gt;{{greeting.text}}&lt;/p&gt;
+    &lt;button ng-click=&quot;test2()&quot;&gt;test2&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;button ng-click=&quot;commonFn()&quot;&gt;commonFn&lt;/button&gt;
+&lt;/div&gt;
+</code></pre><hr>
+<pre><code>var app = angular.module(&quot;app&quot;, []);
+  app.controller(&quot;CommonController&quot;, [&apos;$scope&apos;, function($scope) {
+    $scope.commonFn = function() {
+      alert(&quot;通用的&quot;);
+    };
+  }])
+  app.controller(&quot;Controller1&quot;, [&apos;$scope&apos;, function($scope) {
+    $scope.greeting = {
+      text: &apos;hello1&apos;
+    };
+    $scope.test1 = function() {
+      alert(&quot;test1&quot;);
+    };
+  }])
+  app.controller(&quot;Controller2&quot;, [&apos;$scope&apos;, function($scope) {
+    $scope.greeting = {
+      text: &apos;hello2&apos;
+    };
+    $scope.test2 = function() {
+      alert(&quot;test2&quot;);
+    };
+}])
+</code></pre><h5 id="Controller使用注意"><a href="#Controller使用注意" class="headerlink" title="Controller使用注意:"></a>Controller使用注意:</h5><ul>
+<li>不要复用控制器，一个控制器对应一块视图</li>
+<li>不要在控制器里操作dom 这不是控制器的职责</li>
+<li>不要在控制器里做数据格式化，ng有自带的表单控件</li>
+<li>不要在控制器里做数据过滤，ng有$filter服务</li>
+<li>控制器是不会互相调用的，它们之间的交互通过事件进行</li>
+</ul>
+<h6 id="标签kk-会被替换成template的内容"><a href="#标签kk-会被替换成template的内容" class="headerlink" title="标签kk 会被替换成template的内容"></a>标签kk 会被替换成template的内容</h6><h4 id="Model-数据模型"><a href="#Model-数据模型" class="headerlink" title="Model(数据模型):"></a>Model(数据模型):</h4><h5 id="双向绑定"><a href="#双向绑定" class="headerlink" title="双向绑定"></a>双向绑定</h5><h6 id="不需要自定义js代码，只要引入angular-js，html添加ng-app即可"><a href="#不需要自定义js代码，只要引入angular-js，html添加ng-app即可" class="headerlink" title="不需要自定义js代码，只要引入angular.js，html添加ng-app即可"></a>不需要自定义js代码，只要引入angular.js，html添加ng-app即可</h6><pre><code>&lt;!DOCTYPE html&gt;
+  &lt;html lang=&quot;en&quot; ng-app&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;script type=&quot;text/javascript&quot; src=&quot;angular.js&quot;&gt;&lt;/script&gt;
+  &lt;body&gt;
+    &lt;div&gt;
+      &lt;input ng-model=&quot;say&quot;&gt;&lt;/input&gt;
+      &lt;p&gt;for-model:{{say}}&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+  &lt;script type=&quot;text/javascript&quot; src=&quot;main.js&quot;&gt;&lt;/script&gt;
+&lt;/html&gt;
+</code></pre><p>找到ng-app，告诉浏览器开始由ng接管，继续找到ng-model后生成<code>say</code>模型，并挂载在根作用域$rootScope上,在ng-app里都可以通过<code></code>调用它</p>
+<h4 id="视图View：-利用directive实现"><a href="#视图View：-利用directive实现" class="headerlink" title="视图View：(利用directive实现)"></a>视图View：(利用directive实现)</h4><h6 id="指令-directive-："><a href="#指令-directive-：" class="headerlink" title="指令(directive)："></a>指令(directive)：</h6><pre><code>var app = angular.module(&quot;app&quot;, []);
+app.directive(&quot;kk&quot;, function() {
+  return {
+    restrict: &apos;E&apos;,
+    template: &apos;&lt;div&gt; Hi iam kk&lt;/div&gt;&apos;,
+    replace: true
+  }
+})
+</code></pre><hr>
+<pre><code>&lt;kk&gt;&lt;/kk&gt;
+</code></pre><h4 id="scope-rootScope"><a href="#scope-rootScope" class="headerlink" title="$scope/$rootScope"></a>$scope/$rootScope</h4><blockquote>
+<p>ng中mvc都是借助于$scope实现的</p>
+<p>$rootScope是根作用域,ng-app里的都可以访问到它</p>
+</blockquote>
+<pre><code>&lt;div ng-controller=&quot;GreetCtrl&quot;&gt;
+  {{name}}
+&lt;/div&gt;
+&lt;div ng-controller=&quot;ListCtrl&quot;&gt;
+  &lt;ol&gt;
+    &lt;li ng-repeat=&quot;name in names&quot;&gt;
+      {{name}} from {{department}}
+    &lt;/li&gt;
+  &lt;/ol&gt;
+&lt;/div&gt;
+</code></pre><hr>
+<pre><code>var app = angular.module(&quot;app&quot;, []);
+app.controller(&quot;GreetCtrl&quot;, [&apos;$scope&apos;, &apos;$rootScope&apos;, function($scope, $rootScope) {
+  $scope.name = &apos;kk&apos;;
+  $rootScope.department = &apos;Greet&apos;;
+}])
+app.controller(&quot;ListCtrl&quot;, [&apos;$scope&apos;, function($scope) {
+  $scope.names = [&apos;a&apos;, &apos;b&apos;, &apos;c&apos;];
+}])
+</code></pre><h4 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h4><blockquote>
+<p>emit向上传播</p>
+<p>broadcast向下传播</p>
+</blockquote>
+<pre><code>&lt;div ng-controller=&quot;EventController&quot;&gt;
+  {{count}}
+  &lt;ul&gt;
+    &lt;li ng-repeat=&quot;i in [1]&quot; ng-controller=&quot;EventController&quot;&gt;
+      &lt;button ng-click=&quot;$emit(&apos;MyEvent&apos;)&quot;&gt;1&lt;/button&gt;
+      &lt;button ng-click=&quot;$broadcast(&apos;MyEvent&apos;)&quot;&gt;2&lt;/button&gt;
+      {{count}}
+      &lt;br&gt;
+      &lt;ul&gt;
+        &lt;li ng-repeat=&quot;item in [1,2]&quot; ng-controller=&quot;EventController&quot;&gt;
+          {{count}}
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre><hr>
+<pre><code>var app = angular.module(&quot;app&quot;, []);
+app.controller(&quot;EventController&quot;, [&apos;$scope&apos;, function($scope) {
+  $scope.count = 0;
+  $scope.$on(&apos;MyEvent&apos;, function() {
+    $scope.count++;
+  });
+}]);
+</code></pre><p>点击button1触发<code>$emit(&#39;MyEvent&#39;)</code>，该层和该层<code>以上</code>的count都会自加1</p>
+<p>点击button2触发<code>$broadcast(&#39;MyEvent&#39;)</code>，该层和该层<code>以下</code>的count都会自加1</p>
+<h5 id="scope"><a href="#scope" class="headerlink" title="$scope"></a>$scope</h5><ul>
+<li>$scope是一个js对象</li>
+<li>$scope提供了一些工具方法$watch()/$apply()，内部调用的</li>
+<li>$scope是表达式的执行环境(即作用域)</li>
+<li>$scope是一个树型结构，也DOM平行的(即子$scope可以继承父$scope的属性和方法)</li>
+<li>没个angular应用都有一个根$scope即$rootScopt(一般位于ng-app上)</li>
+<li>$scope可以传播事件的 如emit和broadcast</li>
+<li>$scope不仅是MVC基础，也是双向数据绑定的基础</li>
+<li>对$scope调试可以用angular.element($0).scope()来获取当前元素的$scope</li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/06/05/响应式图片/" rel="next" title="响应式图片">
+                <i class="fa fa-chevron-left"></i> 响应式图片
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/06/11/js其他API/" rel="prev" title="js其他API">
+                js其他API <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="KxinLin" />
+          <p class="site-author-name" itemprop="name">KxinLin</p>
+           
+              <p class="site-description motion-element" itemprop="description">每隔一段时间把笔记整理到这里来</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">67</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#控制器："><span class="nav-number">1.</span> <span class="nav-text">控制器：</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#控制器-Controller-的实现"><span class="nav-number">1.1.</span> <span class="nav-text">控制器(Controller)的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#可以创建多个控制器，若控制器之间有公用的部分，则可以抽出来成服务Service"><span class="nav-number">1.1.1.</span> <span class="nav-text">可以创建多个控制器，若控制器之间有公用的部分，则可以抽出来成服务Service</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#以下是通过功用控制器实现-servive后面介绍"><span class="nav-number">1.1.2.</span> <span class="nav-text">以下是通过功用控制器实现,servive后面介绍</span></a></li></ol></li><li class="nav-item nav-level-5"><a class="nav-link" href="#Controller使用注意"><span class="nav-number">1.2.</span> <span class="nav-text">Controller使用注意:</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#标签kk-会被替换成template的内容"><span class="nav-number">1.2.1.</span> <span class="nav-text">标签kk 会被替换成template的内容</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Model-数据模型"><span class="nav-number">2.</span> <span class="nav-text">Model(数据模型):</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#双向绑定"><span class="nav-number">2.1.</span> <span class="nav-text">双向绑定</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#不需要自定义js代码，只要引入angular-js，html添加ng-app即可"><span class="nav-number">2.1.1.</span> <span class="nav-text">不需要自定义js代码，只要引入angular.js，html添加ng-app即可</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#视图View：-利用directive实现"><span class="nav-number">3.</span> <span class="nav-text">视图View：(利用directive实现)</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#指令-directive-："><span class="nav-number">3.0.1.</span> <span class="nav-text">指令(directive)：</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#scope-rootScope"><span class="nav-number">4.</span> <span class="nav-text">$scope/$rootScope</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#事件"><span class="nav-number">5.</span> <span class="nav-text">事件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#scope"><span class="nav-number">5.1.</span> <span class="nav-text">$scope</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KxinLin</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

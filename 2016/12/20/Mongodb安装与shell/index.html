@@ -1,0 +1,795 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="安装与启动:下载mongodb解压以后 进入bin目录  sudo ./mongod  没有参数的情况下使用默认数据库data/db，如果想要改变可以用 --dbpath 来指定新位置 启动后，在另个窗口输入 mongo 命令，运行shell 文档与集合:文档是键值对的一个有序集，它是MongoDB的核心概念。 集合是一组文档，如果把文档比喻为数据库中的一行，那么集合就是一张表。 在js中，文档被">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mongodb安装与shell">
+<meta property="og:url" content="http://yoursite.com/2016/12/20/Mongodb安装与shell/index.html">
+<meta property="og:site_name" content="博客">
+<meta property="og:description" content="安装与启动:下载mongodb解压以后 进入bin目录  sudo ./mongod  没有参数的情况下使用默认数据库data/db，如果想要改变可以用 --dbpath 来指定新位置 启动后，在另个窗口输入 mongo 命令，运行shell 文档与集合:文档是键值对的一个有序集，它是MongoDB的核心概念。 集合是一组文档，如果把文档比喻为数据库中的一行，那么集合就是一张表。 在js中，文档被">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-20T14:00:57.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Mongodb安装与shell">
+<meta name="twitter:description" content="安装与启动:下载mongodb解压以后 进入bin目录  sudo ./mongod  没有参数的情况下使用默认数据库data/db，如果想要改变可以用 --dbpath 来指定新位置 启动后，在另个窗口输入 mongo 命令，运行shell 文档与集合:文档是键值对的一个有序集，它是MongoDB的核心概念。 集合是一组文档，如果把文档比喻为数据库中的一行，那么集合就是一张表。 在js中，文档被">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2016/12/20/Mongodb安装与shell/"/>
+
+
+
+
+
+  <title>Mongodb安装与shell | 博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/12/20/Mongodb安装与shell/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="KxinLin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Mongodb安装与shell</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-12-20T11:09:33+08:00">
+                2016-12-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mongodb/" itemprop="url" rel="index">
+                    <span itemprop="name">Mongodb</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h5 id="安装与启动"><a href="#安装与启动" class="headerlink" title="安装与启动:"></a>安装与启动:</h5><p>下载mongodb解压以后</p>
+<p>进入bin目录</p>
+<blockquote>
+<p>sudo ./mongod</p>
+</blockquote>
+<p>没有参数的情况下使用默认数据库data/db，如果想要改变可以用 <code>--dbpath</code> 来指定新位置</p>
+<p>启动后，在另个窗口输入 <code>mongo</code> 命令，运行shell</p>
+<h6 id="文档与集合"><a href="#文档与集合" class="headerlink" title="文档与集合:"></a>文档与集合:</h6><p>文档是键值对的一个有序集，它是MongoDB的核心概念。</p>
+<p>集合是一组文档，如果把文档比喻为数据库中的一行，那么集合就是一张表。</p>
+<p>在js中，文档被表示为对象 {“greeting”:”hello world”}<br>这里，只有一个键”greeting”，其对应的值为”hello world”</p>
+<p>键是字符串，命名规则以下:</p>
+<ol>
+<li>键不能含有\0(空字符)，这个字符用于表示键的结尾</li>
+<li>键尽量不要含有.和$</li>
+</ol>
+<a id="more"></a>
+<p>MongoDB不但区分类型还区分大小写,以下两对都是不同的</p>
+<p>{“foo”:3} {“foo”:”3”}</p>
+<p>{“foo”:3} {“Foo”:3}</p>
+<p>文档中不能有重复的键</p>
+<p>{“foo”:3,”foo”:4}</p>
+<p>文档中的键值对是有序的,以下这两个是不同的</p>
+<p>{“a”:3,”b”:4} {“b”:4,”a”:3}</p>
+<h6 id="集合命名"><a href="#集合命名" class="headerlink" title="集合命名:"></a>集合命名:</h6><ol>
+<li>不能是空字符串(“”)</li>
+<li>不能含\0字符(空字符)，这个字符表示集合的结束</li>
+<li>集合名不能以”system.”开头，这是为系统集合保留的前缀。</li>
+<li>不能包含$</li>
+</ol>
+<h6 id="数据库命名"><a href="#数据库命名" class="headerlink" title="数据库命名:"></a>数据库命名:</h6><ol>
+<li>不能是空字符串(“”)</li>
+<li>不能用符号，基本上只能是ASCII中的字母和数字</li>
+<li>区分大小写，最多为64字节<br>注意一点，数据库最终会变成文件系统里的文件，而数据库名就是相应的文件名</li>
+</ol>
+<h4 id="MongoDB-Shell"><a href="#MongoDB-Shell" class="headerlink" title="MongoDB Shell"></a>MongoDB Shell</h4><p>启动后若没有指定数据库，shell会选择默认数据库test,建议自己选择一个数据库<br>选择数据库:</p>
+<blockquote>
+<p>use tutorial</p>
+</blockquote>
+<p>注意:数据库与集合只有在第一次插入文档时才会被创建</p>
+<p>插入与查询:</p>
+<blockquote>
+<p>db.users.insert({username: “smith”})<br>db.users.find()</p>
+</blockquote>
+<p>find方法可以带参数，作为查询选择器<br>继续向集合添加数据:</p>
+<blockquote>
+<p>db.users.save({username: “jones”})</p>
+</blockquote>
+<p>更新数据:<br>添加一个值</p>
+<blockquote>
+<p>db.users.update({username: “simth”},{$set: {country: “Canada”}})</p>
+</blockquote>
+<p>去除一个值</p>
+<blockquote>
+<p>db.users.update({username: “simth”},{$unset: {country: 0}})</p>
+</blockquote>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">db.users.update(&#123;username: &quot;simth&quot;&#125;,&#123;</div><div class="line">	$set: &#123;</div><div class="line">			favorites: &#123;</div><div class="line">				cites: [&quot;A&quot;,&quot;B&quot;],</div><div class="line">				movies: [&quot;a&quot;,&quot;b&quot;,&quot;c&quot;]</div><div class="line">			&#125;</div><div class="line">		&#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure>
+<p>查找：</p>
+<blockquote>
+<p>db.users.find({“facorites.cites”: “A”})</p>
+</blockquote>
+<p>清空集合</p>
+<blockquote>
+<p>db.users.remove()</p>
+</blockquote>
+<p>可以传入一个查询选择器<br>remove()不会删除集合，只是从集合中删除文档,想要删除集合以及全部索引用drop()</p>
+<blockquote>
+<p>db.users.drop()</p>
+</blockquote>
+<p>显示所有数据库:</p>
+<blockquote>
+<p>show dbs</p>
+</blockquote>
+<p>显示所有集合<br>获取更底层信息:</p>
+<blockquote>
+<p>db.stats()</p>
+</blockquote>
+<p>结合js</p>
+<blockquote>
+<p>for(i=0;i&lt;100;i++){<br>    db.nums.save({num: i});<br>}</p>
+<p>db.nums.count() //200</p>
+</blockquote>
+<p>查询大于某个值</p>
+<blockquote>
+<p>db.tutorial.find({num: {“$gt”:90}}</p>
+</blockquote>
+<p>指定上界和下界</p>
+<blockquote>
+<p>db.tutorial.find({num: {“$gt”:90,”$lt”: 95}})</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/12/20/jade-Shell/" rel="next" title="jade Shell">
+                <i class="fa fa-chevron-left"></i> jade Shell
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/04/17/jsDOM/" rel="prev" title="jsDOM">
+                jsDOM <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="KxinLin" />
+          <p class="site-author-name" itemprop="name">KxinLin</p>
+           
+              <p class="site-description motion-element" itemprop="description">每隔一段时间把笔记整理到这里来</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">67</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装与启动"><span class="nav-number">1.</span> <span class="nav-text">安装与启动:</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#文档与集合"><span class="nav-number">1.1.</span> <span class="nav-text">文档与集合:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#集合命名"><span class="nav-number">1.2.</span> <span class="nav-text">集合命名:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#数据库命名"><span class="nav-number">1.3.</span> <span class="nav-text">数据库命名:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#MongoDB-Shell"><span class="nav-number"></span> <span class="nav-text">MongoDB Shell</span></a></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KxinLin</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+
+
+
+
+<meta name="description" content="安装webpack sudo npm install webpack -g  项目也安装webpack npm install webpack@1.15.0 –save-dev  编辑webpack.config.js 1234567module.exports = &amp;#123;    entry: &apos;./src/page/index/index.js&apos;,    output: &amp;#123;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack自动化构建工具">
+<meta property="og:url" content="http://yoursite.com/2017/08/05/webpack自动化构建工具/index.html">
+<meta property="og:site_name" content="博客">
+<meta property="og:description" content="安装webpack sudo npm install webpack -g  项目也安装webpack npm install webpack@1.15.0 –save-dev  编辑webpack.config.js 1234567module.exports = &amp;#123;    entry: &apos;./src/page/index/index.js&apos;,    output: &amp;#123;">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2017-08-20T14:02:06.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpack自动化构建工具">
+<meta name="twitter:description" content="安装webpack sudo npm install webpack -g  项目也安装webpack npm install webpack@1.15.0 –save-dev  编辑webpack.config.js 1234567module.exports = &amp;#123;    entry: &apos;./src/page/index/index.js&apos;,    output: &amp;#123;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2017/08/05/webpack自动化构建工具/"/>
+
+
+
+
+
+  <title>webpack自动化构建工具 | 博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/05/webpack自动化构建工具/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="KxinLin">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">webpack自动化构建工具</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-05T20:56:33+08:00">
+                2017-08-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/自动化/" itemprop="url" rel="index">
+                    <span itemprop="name">自动化</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h5 id="安装webpack"><a href="#安装webpack" class="headerlink" title="安装webpack"></a>安装webpack</h5><blockquote>
+<p>sudo npm install webpack -g</p>
+</blockquote>
+<h5 id="项目也安装webpack"><a href="#项目也安装webpack" class="headerlink" title="项目也安装webpack"></a>项目也安装webpack</h5><blockquote>
+<p>npm install webpack@1.15.0 –save-dev</p>
+</blockquote>
+<p>编辑webpack.config.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>.exports = &#123;</div><div class="line">    entry: <span class="string">'./src/page/index/index.js'</span>,</div><div class="line">    output: &#123;</div><div class="line">        path: <span class="string">'./dist'</span>,</div><div class="line">        filename: <span class="string">'app.js'</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>命令行输入 webpack即可</p>
+<a id="more"></a>
+<h5 id="webpack多个文件输入／输出"><a href="#webpack多个文件输入／输出" class="headerlink" title="webpack多个文件输入／输出"></a>webpack多个文件输入／输出</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> config = &#123;</div><div class="line">    entry: &#123;</div><div class="line">        <span class="string">'index'</span>: [<span class="string">'./src/page/index/index.js'</span>],</div><div class="line">        <span class="string">'login'</span>: [<span class="string">'./src/page/login/index.js'</span>]</div><div class="line">    &#125;,</div><div class="line">    output: &#123;</div><div class="line">        path: <span class="string">'./dist'</span>,</div><div class="line">        filename: <span class="string">'[name].js'</span></div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = config;</div><div class="line"></div><div class="line"><span class="comment">//加上路径</span></div><div class="line"><span class="keyword">var</span> config = &#123;</div><div class="line">    entry: &#123;</div><div class="line">        <span class="string">'index'</span>: [<span class="string">'./src/page/index/index.js'</span>],</div><div class="line">        <span class="string">'login'</span>: [<span class="string">'./src/page/login/index.js'</span>]</div><div class="line">    &#125;,</div><div class="line">    output: &#123;</div><div class="line">        path: <span class="string">'./dist'</span>,</div><div class="line">        filename: <span class="string">'js/[name].js'</span></div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = config;</div><div class="line"></div><div class="line"><span class="comment">//把entry中index和login通用的放在dist/js/base.js下</span></div><div class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</div><div class="line"><span class="keyword">var</span> config = &#123;</div><div class="line">    entry: &#123;</div><div class="line">        <span class="string">'index'</span>: [<span class="string">'./src/page/index/index.js'</span>],</div><div class="line">        <span class="string">'login'</span>: [<span class="string">'./src/page/login/index.js'</span>]</div><div class="line">    &#125;,</div><div class="line">    output: &#123;</div><div class="line">        path: <span class="string">'./dist'</span>,</div><div class="line">        filename: <span class="string">'js/[name].js'</span></div><div class="line">    &#125;,</div><div class="line">    plugins: [</div><div class="line">        <span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(&#123;</div><div class="line">            name: <span class="string">'commons'</span>,</div><div class="line">            filename: <span class="string">'js/base.js'</span></div><div class="line">        &#125;)</div><div class="line">    ]</div><div class="line">&#125;;</div><div class="line"><span class="comment">//把entry中common放在base.js里</span></div><div class="line"><span class="comment">//把entry中除了common以外即index和login公共的部分放在base.js里</span></div><div class="line"><span class="keyword">var</span> webpack = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</div><div class="line"><span class="keyword">var</span> config = &#123;</div><div class="line">    entry: &#123;</div><div class="line">        <span class="string">'common'</span>: [<span class="string">'./src/page/common/index.js'</span>],</div><div class="line">        <span class="string">'index'</span>: [<span class="string">'./src/page/index/index.js'</span>],</div><div class="line">        <span class="string">'login'</span>: [<span class="string">'./src/page/login/index.js'</span>]</div><div class="line">    &#125;,</div><div class="line">    output: &#123;</div><div class="line">        path: <span class="string">'./dist'</span>,</div><div class="line">        filename: <span class="string">'js/[name].js'</span></div><div class="line">    &#125;,</div><div class="line">    plugins: [</div><div class="line">        <span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(&#123;</div><div class="line">            name: <span class="string">'common'</span>,</div><div class="line">            filename: <span class="string">'js/base.js'</span></div><div class="line">        &#125;)</div><div class="line">    ]</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<p>综上，webpack既优化了加载速度又能提供一些全局的模块，还免去了每个页面的require</p>
+<h5 id="打包css"><a href="#打包css" class="headerlink" title="打包css"></a>打包css</h5><p>安装 npm i extract-text-webpack-plugin –save-dev 会报错</p>
+<p>提示npm3+版本下，要自己手动去下载该模块</p>
+<p>打开github找extract-text-webpack-plugin找历史版本</p>
+<p>npm i extract-text-webpack-plugin@1.0.1 –save-dev 会成功</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> webpack           = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</div><div class="line"><span class="keyword">var</span> ExtractTextPlugin = <span class="built_in">require</span>(<span class="string">"extract-text-webpack-plugin"</span>);</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">var</span> config = &#123;</div><div class="line">    entry: &#123;</div><div class="line">        <span class="string">'common'</span>: [<span class="string">'./src/page/common/index.js'</span>],</div><div class="line">        <span class="string">'index'</span>: [<span class="string">'./src/page/index/index.js'</span>],</div><div class="line">        <span class="string">'login'</span>: [<span class="string">'./src/page/login/index.js'</span>]</div><div class="line">    &#125;,</div><div class="line">    output: &#123;</div><div class="line">        path: <span class="string">'./dist'</span>,</div><div class="line">        filename: <span class="string">'js/[name].js'</span></div><div class="line">    &#125;,</div><div class="line">    <span class="built_in">module</span>: &#123;</div><div class="line">        loaders: [</div><div class="line">            &#123;<span class="attr">test</span>: <span class="regexp">/\.css$/</span>, <span class="attr">loader</span>:  ExtractTextPlugin.extract(<span class="string">"style-loader"</span>,<span class="string">"css-loader"</span>)&#125;</div><div class="line">        ]</div><div class="line">    &#125;,</div><div class="line">    plugins: [</div><div class="line">        <span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(&#123;</div><div class="line">            name: <span class="string">'common'</span>,</div><div class="line">            filename: <span class="string">'js/base.js'</span></div><div class="line">        &#125;),</div><div class="line">        <span class="keyword">new</span> ExtractTextPlugin(<span class="string">"css/[name].css"</span>)</div><div class="line">    ]</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h5 id="打包html"><a href="#打包html" class="headerlink" title="打包html"></a>打包html</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> webpack           = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</div><div class="line"><span class="keyword">var</span> ExtractTextPlugin = <span class="built_in">require</span>(<span class="string">"extract-text-webpack-plugin"</span>);</div><div class="line"><span class="keyword">var</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>);</div><div class="line"></div><div class="line"><span class="keyword">var</span> config = &#123;</div><div class="line">    entry: &#123;</div><div class="line">        <span class="string">'common'</span>: [<span class="string">'./src/page/common/index.js'</span>],</div><div class="line">        <span class="string">'index'</span>: [<span class="string">'./src/page/index/index.js'</span>],</div><div class="line">        <span class="string">'login'</span>: [<span class="string">'./src/page/login/index.js'</span>]</div><div class="line">    &#125;,</div><div class="line">    output: &#123;</div><div class="line">        path: <span class="string">'./dist'</span>,</div><div class="line">        filename: <span class="string">'js/[name].js'</span></div><div class="line">    &#125;,</div><div class="line">    <span class="built_in">module</span>: &#123;</div><div class="line">        loaders: [</div><div class="line">            &#123;<span class="attr">test</span>: <span class="regexp">/\.css$/</span>, <span class="attr">loader</span>:  ExtractTextPlugin.extract(<span class="string">"style-loader"</span>,<span class="string">"css-loader"</span>)&#125;</div><div class="line">        ]</div><div class="line">    &#125;,</div><div class="line">    plugins: [</div><div class="line">        <span class="comment">// 独立通用模块到js/base.js</span></div><div class="line">        <span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(&#123;</div><div class="line">            name: <span class="string">'common'</span>,</div><div class="line">            filename: <span class="string">'js/base.js'</span></div><div class="line">        &#125;),</div><div class="line">        <span class="comment">// 把css单独打包到文件了</span></div><div class="line">        <span class="keyword">new</span> ExtractTextPlugin(<span class="string">"css/[name].css"</span>),</div><div class="line">        <span class="comment">// html模版的处理    </span></div><div class="line">        <span class="keyword">new</span> HtmlWebpackPlugin(&#123;</div><div class="line">            template: <span class="string">'./src/view/index.html'</span>,</div><div class="line">            filename: <span class="string">'view/index.html'</span>,</div><div class="line">            inject: <span class="literal">true</span>,</div><div class="line">            hash: <span class="literal">true</span>,</div><div class="line">            chunks: [<span class="string">'common'</span>,<span class="string">'index'</span>]</div><div class="line">        &#125;)</div><div class="line">    ]</div><div class="line">&#125;;</div><div class="line"></div><div class="line"><span class="built_in">module</span>.exports = config;</div></pre></td></tr></table></figure>
+<p>多个html时都写在plugins里很繁琐<br>把它抽出来做一个函数</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> webpack           = <span class="built_in">require</span>(<span class="string">'webpack'</span>);</div><div class="line"><span class="keyword">var</span> ExtractTextPlugin = <span class="built_in">require</span>(<span class="string">"extract-text-webpack-plugin"</span>);</div><div class="line"><span class="keyword">var</span> HtmlWebpackPlugin = <span class="built_in">require</span>(<span class="string">'html-webpack-plugin'</span>);</div></pre></td></tr></table></figure>
+<p>获取html</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> getHtmlConfig = <span class="function"><span class="keyword">function</span>(<span class="params">name</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> &#123;</div><div class="line">        template: <span class="string">'./src/view/'</span>+name+<span class="string">'.html'</span>,</div><div class="line">        filename: <span class="string">'view/'</span>+name+<span class="string">'.html'</span>,</div><div class="line">        inject: <span class="literal">true</span>,</div><div class="line">        hash: <span class="literal">true</span>,</div><div class="line">        chunks: [<span class="string">'common'</span>, name]</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line"></div><div class="line"><span class="keyword">var</span> config = &#123;</div><div class="line">    entry: &#123;</div><div class="line">        <span class="string">'common'</span>: [<span class="string">'./src/page/common/index.js'</span>],</div><div class="line">        <span class="string">'index'</span>: [<span class="string">'./src/page/index/index.js'</span>],</div><div class="line">        <span class="string">'login'</span>: [<span class="string">'./src/page/login/index.js'</span>]</div><div class="line">    &#125;,</div><div class="line">    output: &#123;</div><div class="line">        path: <span class="string">'./dist'</span>,</div><div class="line">        filename: <span class="string">'js/[name].js'</span></div><div class="line">    &#125;,</div><div class="line">    <span class="built_in">module</span>: &#123;</div><div class="line">        loaders: [</div><div class="line">            &#123;<span class="attr">test</span>: <span class="regexp">/\.css$/</span>, <span class="attr">loader</span>:  ExtractTextPlugin.extract(<span class="string">"style-loader"</span>,<span class="string">"css-loader"</span>)&#125;</div><div class="line">        ]</div><div class="line">    &#125;,</div><div class="line">    plugins: [</div><div class="line">        <span class="comment">// 独立通用模块到js/base.js</span></div><div class="line">        <span class="keyword">new</span> webpack.optimize.CommonsChunkPlugin(&#123;</div><div class="line">            name: <span class="string">'common'</span>,</div><div class="line">            filename: <span class="string">'js/base.js'</span></div><div class="line">        &#125;),</div><div class="line">        <span class="comment">// 把css单独打包到文件了</span></div><div class="line">        <span class="keyword">new</span> ExtractTextPlugin(<span class="string">"css/[name].css"</span>),</div><div class="line">        <span class="comment">// html模版的处理</span></div><div class="line">        <span class="keyword">new</span> HtmlWebpackPlugin(getHtmlConfig(<span class="string">'index'</span>)),</div><div class="line">        <span class="keyword">new</span> HtmlWebpackPlugin(getHtmlConfig(<span class="string">'login'</span>))</div><div class="line">    ]</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h5 id="对图片处理"><a href="#对图片处理" class="headerlink" title="对图片处理"></a>对图片处理</h5><blockquote>
+<p>npm i url-loader –save-dev 会把图片变成base64</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">module</span>: &#123;</div><div class="line">        loaders: [</div><div class="line">            &#123;<span class="attr">test</span>: <span class="regexp">/\.css$/</span>, <span class="attr">loader</span>:  ExtractTextPlugin.extract(<span class="string">"style-loader"</span>,<span class="string">"css-loader"</span>)&#125;,</div><div class="line">            &#123;<span class="attr">test</span>: <span class="regexp">/\.(gif|png|jpg)\??.*$/</span>, <span class="attr">loader</span>: <span class="string">'url-loader'</span>&#125;</div><div class="line">        ]</div><div class="line">    &#125;,</div><div class="line"><span class="comment">//当文件小于100时才会转base64，把文件放到/dist/resource下</span></div><div class="line">&#123;<span class="attr">test</span>: <span class="regexp">/\.(gif|png|jpg)\??.*$/</span>, <span class="attr">loader</span>: <span class="string">'url-loader?limit=100&amp;name=resource/[name].[ext]'</span>&#125;</div></pre></td></tr></table></figure>
+<h5 id="安装webpack-dev-server"><a href="#安装webpack-dev-server" class="headerlink" title="安装webpack-dev-server"></a>安装webpack-dev-server</h5><blockquote>
+<p>npm i webpack-dev-server@1.16.5 -g</p>
+<p>npm i webpack-dev-server –save-dev</p>
+</blockquote>
+<p>即可打开服务器</p>
+<blockquote>
+<p>webpack-dev-server</p>
+<p>webpack-dev-server –inline –port 8088</p>
+<p>WEBPACK_ENV=obline webpack-dev-server –inline –port 8088</p>
+</blockquote>
+<p>有时候命令太长，容易敲错。可以利用node的script，在package.json里</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="string">"scripts"</span>: &#123;</div><div class="line">  <span class="string">"dev"</span>: <span class="string">"WEBPACK_ENV=dev webpack-dev-server --inline --port 8088"</span>,</div><div class="line">  <span class="string">"dev_win"</span>: <span class="string">"set WEBPACK_ENV=dev &amp;&amp; webpack-dev-server --inline --port 8088"</span>,</div><div class="line">  <span class="string">"dist"</span>: <span class="string">"WEBPACK_ENV=online webpack -p"</span>,</div><div class="line">  <span class="string">"dist_win"</span>: <span class="string">"WEBPACK_ENV=online webpack -p"</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>npm run dev即可跑第一条</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/08/04/es6模块化/" rel="next" title="es6模块化">
+                <i class="fa fa-chevron-left"></i> es6模块化
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/08/05/es6作用域/" rel="prev" title="es6作用域">
+                es6作用域 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image"
+               src="/images/avatar.gif"
+               alt="KxinLin" />
+          <p class="site-author-name" itemprop="name">KxinLin</p>
+           
+              <p class="site-description motion-element" itemprop="description">每隔一段时间把笔记整理到这里来</p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">67</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">31</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#安装webpack"><span class="nav-number">1.</span> <span class="nav-text">安装webpack</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#项目也安装webpack"><span class="nav-number">2.</span> <span class="nav-text">项目也安装webpack</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#webpack多个文件输入／输出"><span class="nav-number">3.</span> <span class="nav-text">webpack多个文件输入／输出</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#打包css"><span class="nav-number">4.</span> <span class="nav-text">打包css</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#打包html"><span class="nav-number">5.</span> <span class="nav-text">打包html</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#对图片处理"><span class="nav-number">6.</span> <span class="nav-text">对图片处理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#安装webpack-dev-server"><span class="nav-number">7.</span> <span class="nav-text">安装webpack-dev-server</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright" >
+  
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">KxinLin</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Mist
+  </a>
+</div>
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
