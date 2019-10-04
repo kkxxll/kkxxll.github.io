@@ -257,6 +257,176 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/07/04/高阶函数与高阶组件/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="KxinLin">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2019/07/04/高阶函数与高阶组件/" itemprop="url">高阶函数与高阶组件</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-07-04T14:52:11+08:00">
+                2019-07-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <h2 id="高阶函数"><a href="#高阶函数" class="headerlink" title="高阶函数"></a>高阶函数</h2><h3 id="满足以下条件之一就可称为高阶函数"><a href="#满足以下条件之一就可称为高阶函数" class="headerlink" title="满足以下条件之一就可称为高阶函数"></a>满足以下条件之一就可称为高阶函数</h3><ul>
+<li>函数可以作为参数被传递</li>
+<li>函数可以作为返回值输出</li>
+<li>场景：<ul>
+<li>防抖: 指的是无论某个动作被连续触发多少次，直到这个连续动作停止后，才会被当作一次来执行.比如一个输入框接受用户不断输入，输入结束后才开始搜索。每次操作时，清除上次的定时器定义新的定时器，一段时间后进行操作。</li>
+<li>节流: 指的是无论某个动作被连续触发多少次，在定义的一段时间之内，它仅能够触发一次。比如resize和scroll时间频繁触发的操作，如果都接受了处理，可能会影响性能，需要进行节流控制</li>
+</ul>
+</li>
+</ul>
+<h4 id="AOP-面向切面编程"><a href="#AOP-面向切面编程" class="headerlink" title="AOP(面向切面编程)"></a>AOP(面向切面编程)</h4><ul>
+<li>将一些功能抽取出来，动态织入到业务模块中，旨在降低程序之间的耦合行，属于设计模式中的装饰者模式</li>
+</ul>
+<h5 id="前置装饰和后置装饰"><a href="#前置装饰和后置装饰" class="headerlink" title="前置装饰和后置装饰"></a>前置装饰和后置装饰</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Function</span>.prototype.aopBefore = <span class="function"><span class="keyword">function</span> (<span class="params">fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> _this = <span class="keyword">this</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        fn.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>)</span><br><span class="line">        <span class="keyword">return</span> _this.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">Function</span>.prototype.aopAfter = <span class="function"><span class="keyword">function</span> (<span class="params">fn</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> _this = <span class="keyword">this</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> current = _this.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>)</span><br><span class="line">        fn.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>)</span><br><span class="line">        <span class="keyword">return</span> current</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> name = []</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addNum</span>(<span class="params">len</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">const</span> arr = []</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;len;i++) &#123;</span><br><span class="line">            arr.push(i)</span><br><span class="line">        &#125;</span><br><span class="line">        name = arr</span><br><span class="line">        <span class="built_in">console</span>.log(name)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addColor</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'添加数字'</span>)</span><br><span class="line">    name = [<span class="string">'1'</span>,<span class="string">'2'</span>,<span class="string">'3'</span>, <span class="string">'4'</span>]</span><br><span class="line">    <span class="built_in">console</span>.log(name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">_random</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'重新排序'</span>)</span><br><span class="line">    name = [<span class="string">'4'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'1'</span>]</span><br><span class="line">    <span class="built_in">console</span>.log(name)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fn = addNum(<span class="number">3</span>).aopAfter(addColor).aopAfter(_random)</span><br><span class="line">fn()</span><br></pre></td></tr></table></figure>
+<h4 id="currying-柯里化"><a href="#currying-柯里化" class="headerlink" title="currying(柯里化)"></a>currying(柯里化)</h4><ul>
+<li>柯里化也称部分求值，调用一部分参数，剩下的参数通过返回一个新的函数去处理</li>
+<li>一个柯里化函数首先会接受一些参数，且该函数并不会立即求值，而是继续返回另外一个函数，刚才传入的参数在函数中形成的闭包中被保存起来。待到函数中被真正的需要求值的时候，之前传入的所有参数被一次性用于求值。</li>
+<li>特点: 参数复用和提前返回</li>
+<li>场景: 延迟执行(不断的柯里化，累积传入的参数，最后执行)，参数复用，动态创建函数</li>
+<li>缺点: 函数柯里化会产生开销（函数嵌套，比普通函数占更多内存），但性能瓶颈还是取决于其它原因（DOM 操作等）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">var currying = function(fn) &#123;</span><br><span class="line">    var _args = []</span><br><span class="line">    return function cb() &#123;</span><br><span class="line">        if (arguments.length == 0) &#123;</span><br><span class="line">            return fn.apply(this, _args)</span><br><span class="line">        &#125;</span><br><span class="line">        Array.prototype.push.apply(_args, arguments);</span><br><span class="line">        return cb;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function getData(...arguments) &#123;</span><br><span class="line">    console.log(arguments)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var a = currying(getData)</span><br><span class="line"></span><br><span class="line">// 添加数组，添加颜色，是否随机方向</span><br><span class="line">a([1,2,3,4])(&apos;red&apos;)(true)()</span><br></pre></td></tr></table></figure>
+<h4 id="反柯里话"><a href="#反柯里话" class="headerlink" title="反柯里话"></a>反柯里话</h4><ul>
+<li>反柯里化，将柯里化过后的函数反转回来，由原先的接受单个参数的几个调用转变为接受多个参数的单个调用</li>
+<li>实现方法是：将多个参数一次性传给柯里化的函数，因为我们的柯里化函数本身就支持多个参数的传入处理，反柯里化调用时，仅使用“一次调用”即可。</li>
+</ul>
+<h2 id="高阶组件"><a href="#高阶组件" class="headerlink" title="高阶组件"></a>高阶组件</h2><ul>
+<li>定义：一个传入一个组件，返回另一个组件的函数</li>
+<li><code>const EnhancedComponent = higherOrderComponent(WrappedComponent)</code>,通过 higherOrderComponent 函数返回的 EnhancedComponent 就是一个高阶组件</li>
+</ul>
+<h4 id="使用场景-解决的问题"><a href="#使用场景-解决的问题" class="headerlink" title="使用场景(解决的问题)"></a>使用场景(解决的问题)</h4><ul>
+<li>代码复用：两个相似度很高的组件通过将组件重复部分抽取出来，再通过高阶组件扩展，增删改props，可达到组件可复用的目的</li>
+<li>条件渲染：控制组件的渲染逻辑，如：鉴权</li>
+<li>生命周期捕获/劫持：借助父组件子组件生命周期规则捕获子组件的生命周期，如：打点</li>
+</ul>
+<h4 id="基本用法"><a href="#基本用法" class="headerlink" title="基本用法"></a>基本用法</h4><ul>
+<li>包裹方式</li>
+<li>组合方式</li>
+<li>继承方式</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> HoC = <span class="function">(<span class="params">WrappendComponent</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> WrappingComponent = <span class="function">(<span class="params">props</span>) =&gt;</span> (</span><br><span class="line">        &lt;div className=<span class="string">"container"</span>&gt;</span><br><span class="line">            &lt;WrappendComponent &#123;...props&#125; /&gt;</span><br><span class="line">        &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    );</span></span><br><span class="line"><span class="regexp">    return WrappingComponent;</span></span><br><span class="line"><span class="regexp">&#125;;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/ 在 WrappingComponent 中，可以读取、添加、编辑、删除传给 WrappendComponent 的 props，也可以用其它元素包裹 WrappendComponent，用来实现封装样式、添加布局或其它操作。</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> HoC = <span class="function">(<span class="params">WrappedComponent, LoginView</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">const</span> WrappingComponent = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> &#123;user&#125; = <span class="keyword">this</span>.props;  </span><br><span class="line">        <span class="keyword">if</span> (user) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">WrappedComponent</span> &#123;<span class="attr">...this.props</span>&#125; /&gt;</span></span></span><br><span class="line"><span class="xml">        &#125; else &#123;</span></span><br><span class="line">            return &lt;LoginView &#123;...this.props&#125; /&gt;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;;</span><br><span class="line">    return WrappingComponent;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> HoC = <span class="function">(<span class="params">WrappendComponent</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">WrappingComponent</span> <span class="keyword">extends</span> <span class="title">WrappendComponent</span> </span>&#123;</span><br><span class="line">        render() (</span><br><span class="line">            <span class="keyword">const</span> &#123;user, ...otherProps&#125; = <span class="keyword">this</span>.props;</span><br><span class="line">            <span class="keyword">this</span>.props = otherProps;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">super</span>.render();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> WrappingComponent;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="comment">// WrappingComponent 是一个新组件，它继承自 WrappendComponent，共享父级的函数和属性。可以使用 super.render() 或者 super.componentWillUpdate() 调用父级的生命周期函数，但是这样会让两个组件耦合在一起，降低组件的复用性。</span></span><br></pre></td></tr></table></figure>
+<h6 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Welcome 组件</span></span><br><span class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Welcome</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(props) &#123;</span><br><span class="line">        <span class="keyword">super</span>(props);</span><br><span class="line">        <span class="keyword">this</span>.state = &#123;</span><br><span class="line">            username: <span class="string">''</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    componentWillMount() &#123;</span><br><span class="line">        <span class="keyword">let</span> username = localStorage.getItem(<span class="string">'username'</span>);</span><br><span class="line">        <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">            username: username</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    render() &#123;</span><br><span class="line">        <span class="keyword">return</span> (</span><br><span class="line">            &lt;div&gt;welcome &#123;<span class="keyword">this</span>.state.username&#125;&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">        )</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">export default Welcome;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">import React, &#123;Component&#125; from 'react'</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">class Goodbye extends Component &#123;</span></span><br><span class="line"><span class="regexp">    constructor(props) &#123;</span></span><br><span class="line"><span class="regexp">        super(props);</span></span><br><span class="line"><span class="regexp">        this.state = &#123;</span></span><br><span class="line"><span class="regexp">            username: ''</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    componentWillMount() &#123;</span></span><br><span class="line"><span class="regexp">        let username = localStorage.getItem('username');</span></span><br><span class="line"><span class="regexp">        this.setState(&#123;</span></span><br><span class="line"><span class="regexp">            username: username</span></span><br><span class="line"><span class="regexp">        &#125;)</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">    render() &#123;</span></span><br><span class="line"><span class="regexp">        return (</span></span><br><span class="line"><span class="regexp">            &lt;div&gt;goodbye &#123;this.state.username&#125;&lt;/</span>div&gt;</span><br><span class="line">        )</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> Goodbye;</span><br><span class="line"></span><br><span class="line"><span class="comment">// ======================</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> React, &#123;Component&#125; <span class="keyword">from</span> <span class="string">'react'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> (WrappedComponent) =&gt; &#123;</span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">NewComponent</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</span><br><span class="line">        <span class="keyword">constructor</span>() &#123;</span><br><span class="line">            <span class="keyword">super</span>();</span><br><span class="line">            <span class="keyword">this</span>.state = &#123;</span><br><span class="line">                username: <span class="string">''</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      </span><br><span class="line">        componentWillMount() &#123;</span><br><span class="line">            <span class="keyword">let</span> username = localStorage.getItem(<span class="string">'username'</span>);</span><br><span class="line">            <span class="keyword">this</span>.setState(&#123;</span><br><span class="line">                username: username</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        render() &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">WrappedComponent</span> <span class="attr">username</span>=<span class="string">&#123;this.state.username&#125;/</span>&gt;</span></span></span><br><span class="line"><span class="xml">        &#125;</span></span><br><span class="line"><span class="xml">    &#125;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">    return NewComponent</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml">import React, &#123;Component&#125; from 'react';</span></span><br><span class="line"><span class="xml">import wrapWithUsername from 'wrapWithUsername';</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">class Welcome extends Component &#123;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">    render() &#123;</span></span><br><span class="line"><span class="xml">        return (</span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span>welcome &#123;this.props.username&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">        )</span></span><br><span class="line"><span class="xml">    &#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">Welcome = wrapWithUsername(Welcome);</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">export default Welcome;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">//高阶的goodbye组件</span></span><br><span class="line"><span class="xml">import React, &#123;Component&#125; from 'react';</span></span><br><span class="line"><span class="xml">import wrapWithUsername from 'wrapWithUsername';</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">class Goodbye extends Component &#123;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">    render() &#123;</span></span><br><span class="line"><span class="xml">        return (</span></span><br><span class="line"><span class="xml">            <span class="tag">&lt;<span class="name">div</span>&gt;</span>goodbye &#123;this.props.username&#125;<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">        )</span></span><br><span class="line"><span class="xml">    &#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">Goodbye = wrapWithUsername(Goodbye);</span></span><br><span class="line"><span class="xml"></span></span><br><span class="line"><span class="xml">export default Goodbye;</span></span><br></pre></td></tr></table></figure>
+<h4 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h4><ul>
+<li>不要修改重写其生命周期方法</li>
+<li>使用纯函数返回新的组件，因为一旦修改原组件，就失去了组件复用的意义</li>
+<li>props保持一致高阶组件在为子组件添加特性的同时，要保持子组件的原有的props不受影响。传入的组件和返回的组件在props上尽量保持一致。</li>
+<li>保持可组合性</li>
+<li>displayName为了方便调试，最常见的高阶组件命名方式是将子组件名字包裹起来</li>
+<li>不要在render方法内部使用高阶组件render中的高阶组件会在每次render时重新mount，之前组件内部的state也会丢失</li>
+</ul>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/05/性能优化之图片/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1503,8 +1673,7 @@
 </ul>
 </li>
 <li>缺点:<ul>
-<li>Node是一个相对新的开源项目，所以不太稳定</li>
-<li>而且缺少足够多的第三方库支持。看起来，就像是Ruby/Rails当年的样子</li>
+<li>Node是一个相对新的开源项目，所以不太稳定，缺少足够多的第三方库支持</li>
 </ul>
 </li>
 </ul>
@@ -1696,159 +1865,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/20/ajax跨域/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="KxinLin">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="博客">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/08/20/ajax跨域/" itemprop="url">ajax跨域</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-20T11:52:06+08:00">
-                2017-08-20
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/ajax/" itemprop="url" rel="index">
-                    <span itemprop="name">ajax</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>跨域问题：</p>
-<pre><code>http://  www .  abc.com  :8080 /css/style.css
-协议     子域名    主域名    端口   请求资源地址
-</code></pre><p>前四项任意一个不同都算作不同域（跨域）</p>
-<p>js出于安全方面的考虑，不允许跨域调用其他页面的对象</p>
-<p>处理跨域可以使用后台代</p>
-<p>也可以使用jsonp(利用script标签跨域)  只支持get</p>
-<p>或使用XMLHttpRequest</p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/08/20/ajax跨域/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1897,7 +1913,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">77</span>
+                <span class="site-state-item-count">78</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>

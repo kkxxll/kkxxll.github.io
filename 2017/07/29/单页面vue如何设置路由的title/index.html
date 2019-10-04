@@ -101,7 +101,7 @@
 <meta property="og:site_name" content="博客">
 <meta property="og:description" content="通过document.titlecreated在钩子函数启动之后设置document.title=&amp;#39;标题&amp;#39; 1234567891011&amp;lt;script&amp;gt;export default &amp;#123;    data()&amp;#123;        return&amp;#123;        &amp;#125;    &amp;#125;,    created()&amp;#123;        do">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-20T13:09:42.000Z">
+<meta property="og:updated_time" content="2019-10-04T06:30:50.487Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="单页面vue如何设置路由的title">
 <meta name="twitter:description" content="通过document.titlecreated在钩子函数启动之后设置document.title=&amp;#39;标题&amp;#39; 1234567891011&amp;lt;script&amp;gt;export default &amp;#123;    data()&amp;#123;        return&amp;#123;        &amp;#125;    &amp;#125;,    created()&amp;#123;        do">
@@ -347,6 +347,7 @@
       
         <h5 id="通过document-title"><a href="#通过document-title" class="headerlink" title="通过document.title"></a>通过document.title</h5><p>created在钩子函数启动之后设置<code>document.title=&#39;标题&#39;</code></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">    data()&#123;</span><br><span class="line">        <span class="keyword">return</span>&#123;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    created()&#123;</span><br><span class="line">        <span class="built_in">document</span>.title=<span class="string">"首页"</span></span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+<p>该方法在IOS的微信下是无效的，可用vue-wechat-title解决</p>
 <a id="more"></a>
 <h5 id="使用vue-wechat-title"><a href="#使用vue-wechat-title" class="headerlink" title="使用vue-wechat-title"></a>使用vue-wechat-title</h5><p><code>npm install vue-wechat-title</code></p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> router = <span class="keyword">new</span> VueRouter(&#123;</span><br><span class="line">    mode: <span class="string">'history'</span>,</span><br><span class="line">    routes:[</span><br><span class="line">        &#123;</span><br><span class="line">        name: <span class="string">'index'</span>,</span><br><span class="line">        path: <span class="string">'/'</span>,</span><br><span class="line">        meta: &#123;</span><br><span class="line">               title: <span class="string">'首页'</span></span><br><span class="line">          &#125;,</span><br><span class="line">          component: index</span><br><span class="line">        &#125;,</span><br><span class="line">      &#123;</span><br><span class="line">          name: <span class="string">'root'</span>,</span><br><span class="line">          path: <span class="string">'/root'</span>,  </span><br><span class="line">          meta: &#123;</span><br><span class="line">               title: <span class="string">'肉特'</span></span><br><span class="line">        &#125;,</span><br><span class="line">        component: root</span><br><span class="line">        &#125;   </span><br><span class="line">  ]</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
@@ -464,7 +465,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">77</span>
+                <span class="site-state-item-count">78</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
