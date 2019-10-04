@@ -6,10 +6,10 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -39,7 +39,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -73,21 +73,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
 
 
 
@@ -133,7 +133,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/04/17/jsDOM/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/04/17/jsDOM/">
 
 
 
@@ -167,7 +167,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -197,7 +197,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -207,7 +207,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -217,7 +217,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -260,7 +260,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="KxinLin">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -296,7 +296,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -356,42 +356,42 @@
 <li><p>DOM节点操作</p>
 <ul>
 <li><p>获取DOM节点 DOM节点本质其实是js对象，它的属性称为prototype</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var div1 = document.getElementById(<span class="string">'div1'</span>);//元素</div><div class="line">var divList = document.getElementsByTagName(<span class="string">'div'</span>);//集合</div><div class="line">var divList1 = document.querySelectorAll(<span class="string">'div'</span>);//集合</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var div1 = document.getElementById(<span class="string">'div1'</span>);//元素</span><br><span class="line">var divList = document.getElementsByTagName(<span class="string">'div'</span>);//集合</span><br><span class="line">var divList1 = document.querySelectorAll(<span class="string">'div'</span>);//集合</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>prototype js中对象的属性</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var div1 = document.getElementById(<span class="string">'div1'</span>);//元素</div><div class="line">console.log(div1.className);</div><div class="line">div1.className = <span class="string">'kk'</span>;</div><div class="line">console.log(div1.className);</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var div1 = document.getElementById(<span class="string">'div1'</span>);//元素</span><br><span class="line">console.log(div1.className);</span><br><span class="line">div1.className = <span class="string">'kk'</span>;</span><br><span class="line">console.log(div1.className);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>Attribute html文档中标签的属性，如a标签的href</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;div id=<span class="string">"div1"</span> date-name=<span class="string">"kk"</span>&gt;&lt;/div&gt;</div><div class="line"></div><div class="line">var div1 = document.getElementById(<span class="string">'div1'</span>);//元素</div><div class="line">console.log(div1.getAttribute(<span class="string">'data-name'</span>));</div><div class="line">div1.setAttribute(<span class="string">'data-name'</span>,<span class="string">'kkk'</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"div1"</span> date-name=<span class="string">"kk"</span>&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">var div1 = document.getElementById(<span class="string">'div1'</span>);//元素</span><br><span class="line">console.log(div1.getAttribute(<span class="string">'data-name'</span>));</span><br><span class="line">div1.setAttribute(<span class="string">'data-name'</span>,<span class="string">'kkk'</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p>DOM结构操作</p>
 <ul>
 <li><p>新增/移动节点</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//新增</div><div class="line">var div1 =  document.getElementById(<span class="string">'div1'</span>);</div><div class="line">var p1 = document.createElement(<span class="string">'p'</span>);</div><div class="line">div1.appendChild(p1);</div><div class="line"></div><div class="line">//移动</div><div class="line">&lt;div id=<span class="string">"div1"</span>&gt;&lt;/div&gt;</div><div class="line">&lt;div id=<span class="string">"div2"</span>&gt;&lt;p&gt;p&lt;/p&gt;&lt;/div&gt;</div><div class="line"></div><div class="line">var div1 = document.getElementById(<span class="string">'div1'</span>);</div><div class="line">var p = document.getElementsByTagName(<span class="string">'p'</span>)[0];</div><div class="line">var div2 = document.getElementById(<span class="string">'div2'</span>);</div><div class="line">div2.appendChild(p);</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//新增</span><br><span class="line">var div1 =  document.getElementById(<span class="string">'div1'</span>);</span><br><span class="line">var p1 = document.createElement(<span class="string">'p'</span>);</span><br><span class="line">div1.appendChild(p1);</span><br><span class="line"></span><br><span class="line">//移动</span><br><span class="line">&lt;div id=<span class="string">"div1"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;div id=<span class="string">"div2"</span>&gt;&lt;p&gt;p&lt;/p&gt;&lt;/div&gt;</span><br><span class="line"></span><br><span class="line">var div1 = document.getElementById(<span class="string">'div1'</span>);</span><br><span class="line">var p = document.getElementsByTagName(<span class="string">'p'</span>)[0];</span><br><span class="line">var div2 = document.getElementById(<span class="string">'div2'</span>);</span><br><span class="line">div2.appendChild(p);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>获取父节点</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var div1 =  document.getElementById(<span class="string">'div1'</span>);</div><div class="line">var parent = div1.parentElement;</div><div class="line">console.log(parent);//body</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var div1 =  document.getElementById(<span class="string">'div1'</span>);</span><br><span class="line">var parent = div1.parentElement;</span><br><span class="line">console.log(parent);//body</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>获取子节点</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">var parent = document.getElementsByTagName(<span class="string">'body'</span>)[0];</div><div class="line">var child = parent.childNodes;</div><div class="line">//其中包括text子节点,是由于空格导致的</div><div class="line">//可以通过nodeType过滤</div><div class="line">//text nodetype 3</div><div class="line">//p  nodetype 1</div><div class="line"></div><div class="line">//也可通过 nodeName过滤</div><div class="line">//text nodeName <span class="comment">#text</span></div><div class="line">//p  nodeName p</div><div class="line"></div><div class="line">parent.childNodes[i].nodetype;</div><div class="line">parent.childNodes[i].nodeName;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var parent = document.getElementsByTagName(<span class="string">'body'</span>)[0];</span><br><span class="line">var child = parent.childNodes;</span><br><span class="line">//其中包括text子节点,是由于空格导致的</span><br><span class="line">//可以通过nodeType过滤</span><br><span class="line">//text nodetype 3</span><br><span class="line">//p  nodetype 1</span><br><span class="line"></span><br><span class="line">//也可通过 nodeName过滤</span><br><span class="line">//text nodeName <span class="comment">#text</span></span><br><span class="line">//p  nodeName p</span><br><span class="line"></span><br><span class="line">parent.childNodes[i].nodetype;</span><br><span class="line">parent.childNodes[i].nodeName;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>删除节点</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">parent.removeChild(document.getElementById(<span class="string">'div1'</span>));</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">parent.removeChild(document.getElementById(<span class="string">'div1'</span>));</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
 <h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><ul>
 <li><p>DOM是哪种基本的数据结构</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">树</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">树</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>DOM操作的常用API有哪些</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">新增／移动节点</div><div class="line">获取父／子节点</div><div class="line">删除节点</div><div class="line">操作节点</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">新增／移动节点</span><br><span class="line">获取父／子节点</span><br><span class="line">删除节点</span><br><span class="line">操作节点</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>DOM节点的Attribute和property有何区别</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">property是一个js对象属性的操作</div><div class="line">Attribute是对html标签属性的操作</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">property是一个js对象属性的操作</span><br><span class="line">Attribute是对html标签属性的操作</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -483,7 +483,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -494,9 +494,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="KxinLin" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="KxinLin">
           <p class="site-author-name" itemprop="name">KxinLin</p>
            
               <p class="site-description motion-element" itemprop="description">每隔一段时间把笔记整理到这里来</p>
@@ -507,7 +505,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">75</span>
+                <span class="site-state-item-count">76</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -518,7 +516,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -575,10 +573,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

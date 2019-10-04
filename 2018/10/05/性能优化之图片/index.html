@@ -6,10 +6,10 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -39,7 +39,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -73,38 +73,38 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
 
 
 
 
 
 
-<meta name="description" content="每隔一段时间把笔记整理到这里来">
+<meta name="description" content="针对不同的场景使用不同的图片格式 jpg有损压缩，压缩率高，不支持透明(应用于大部分图片不需要透明的业务场景) png支持透明，浏览器兼容性好(大部分图片需要透明图片的业务场景) png8  256(2^8)色 支持透明 png24 2^24色 不支持透明 png32 2^24色 支持透明   gif 使用于loading动画,只支持全透明和全不透明 webp压缩程度更好，在ios有兼容性问题(适">
 <meta property="og:type" content="article">
-<meta property="og:title" content="first">
-<meta property="og:url" content="http://yoursite.com/2017/08/09/first/index.html">
+<meta property="og:title" content="性能优化之图片">
+<meta property="og:url" content="http://yoursite.com/2018/10/05/性能优化之图片/index.html">
 <meta property="og:site_name" content="博客">
-<meta property="og:description" content="每隔一段时间把笔记整理到这里来">
+<meta property="og:description" content="针对不同的场景使用不同的图片格式 jpg有损压缩，压缩率高，不支持透明(应用于大部分图片不需要透明的业务场景) png支持透明，浏览器兼容性好(大部分图片需要透明图片的业务场景) png8  256(2^8)色 支持透明 png24 2^24色 不支持透明 png32 2^24色 支持透明   gif 使用于loading动画,只支持全透明和全不透明 webp压缩程度更好，在ios有兼容性问题(适">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2017-08-09T08:34:50.000Z">
+<meta property="og:updated_time" content="2019-10-04T03:37:18.595Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="first">
-<meta name="twitter:description" content="每隔一段时间把笔记整理到这里来">
+<meta name="twitter:title" content="性能优化之图片">
+<meta name="twitter:description" content="针对不同的场景使用不同的图片格式 jpg有损压缩，压缩率高，不支持透明(应用于大部分图片不需要透明的业务场景) png支持透明，浏览器兼容性好(大部分图片需要透明图片的业务场景) png8  256(2^8)色 支持透明 png24 2^24色 不支持透明 png32 2^24色 支持透明   gif 使用于loading动画,只支持全透明和全不透明 webp压缩程度更好，在ios有兼容性问题(适">
 
 
 
@@ -133,13 +133,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/09/first/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/10/05/性能优化之图片/">
 
 
 
 
 
-  <title>first | 博客</title>
+  <title>性能优化之图片 | 博客</title>
   
 
 
@@ -167,7 +167,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -197,7 +197,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -207,7 +207,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -217,7 +217,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -256,11 +256,11 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/08/09/first/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/10/05/性能优化之图片/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="KxinLin">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -273,7 +273,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">first</h1>
+          <h1 class="post-title" itemprop="name headline">性能优化之图片</h1>
         
 
         <div class="post-meta">
@@ -285,8 +285,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-08-09T16:15:23+08:00">
-                2017-08-09
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-10-05T10:43:20+08:00">
+                2018-10-05
               </time>
             
 
@@ -296,7 +296,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -308,8 +308,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/aa/" itemprop="url" rel="index">
-                    <span itemprop="name">aa</span>
+                  <a href="/categories/性能优化/" itemprop="url" rel="index">
+                    <span itemprop="name">性能优化</span>
                   </a>
                 </span>
 
@@ -345,7 +345,32 @@
       
 
       
-        
+        <h4 id="针对不同的场景使用不同的图片格式"><a href="#针对不同的场景使用不同的图片格式" class="headerlink" title="针对不同的场景使用不同的图片格式"></a>针对不同的场景使用不同的图片格式</h4><ul>
+<li>jpg有损压缩，压缩率高，不支持透明(应用于大部分图片不需要透明的业务场景)</li>
+<li>png支持透明，浏览器兼容性好(大部分图片需要透明图片的业务场景)<ul>
+<li>png8  256(2^8)色 支持透明</li>
+<li>png24 2^24色 不支持透明</li>
+<li>png32 2^24色 支持透明</li>
+</ul>
+</li>
+<li>gif 使用于loading动画,只支持全透明和全不透明</li>
+<li>webp压缩程度更好，在ios有兼容性问题(适用于安卓)</li>
+<li>svg矢量图，代码内嵌，相对较小(图片样式相对简单场景),放大和缩小的时每一个像素会根据向量重新计算，固不会失真</li>
+<li>css雪碧图(减少了 http 请求，有时候雪碧图太大，请求缓慢，还需要对雪碧图进行拆分，不适合大图合并)</li>
+<li>base64(inline到html里，把图片内容内嵌到htm中)<ul>
+<li>无额外请求，无需考虑跨域问题</li>
+<li>缺点：内嵌在html或css里代码可读性不好</li>
+</ul>
+</li>
+<li>iconfont(矢量图，字体文件取代图片文件，来展示图标、特殊字体等元素)<ul>
+<li>减少 http 请求</li>
+<li>可以直接通过 css 的 font-size，color 修改它的大小和颜色，对于需要缩放多个尺寸的图标，是个很好的解决方案</li>
+<li>支持一些 css3 对文字的效果，例如：阴影、旋转、透明度</li>
+<li>缺点：操作流程繁琐</li>
+</ul>
+</li>
+</ul>
+
       
     </div>
     
@@ -369,8 +394,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/08/09/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2017/09/17/深入理解DOM事件/" rel="next" title="深入理解DOM事件">
+                <i class="fa fa-chevron-left"></i> 深入理解DOM事件
               </a>
             
           </div>
@@ -429,12 +454,19 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="KxinLin" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="KxinLin">
           <p class="site-author-name" itemprop="name">KxinLin</p>
            
               <p class="site-description motion-element" itemprop="description">每隔一段时间把笔记整理到这里来</p>
@@ -445,7 +477,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">76</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -456,7 +488,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -484,6 +516,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#针对不同的场景使用不同的图片格式"><span class="nav-number">1.</span> <span class="nav-text">针对不同的场景使用不同的图片格式</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -497,10 +545,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
-  &copy;  2015 - 
-  <span itemprop="copyrightYear">2017</span>
+  &copy;  2016 - 
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

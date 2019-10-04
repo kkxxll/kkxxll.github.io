@@ -6,10 +6,10 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -39,7 +39,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -73,21 +73,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
 
 
 
@@ -133,7 +133,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/30/CSRF跨站请求伪造/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/30/CSRF跨站请求伪造/">
 
 
 
@@ -167,7 +167,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -197,7 +197,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -207,7 +207,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -217,7 +217,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -260,7 +260,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="KxinLin">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -296,7 +296,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -347,7 +347,7 @@
       
         <p>全称: Cross Site Request Forgy</p>
 <p>用户点击以后，在用户不知情的情况下向目标网站发送一个伪造的请求</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//通过post</span></div><div class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</div><div class="line">    <span class="built_in">document</span>.write(<span class="string">`</span></div><div class="line"><span class="string">        &lt;form name="commentForm" targer="csrf" method="post" action="http://localhostt:8088/post/addComment"&gt;</span></div><div class="line"><span class="string">            &lt;input name="postId" type="hidden" value="13"&gt;</span></div><div class="line"><span class="string">            &lt;textarea name="comment"&gt;来自CSRF&lt;/textarea&gt;</span></div><div class="line"><span class="string">        &lt;/form&gt;</span></div><div class="line"><span class="string">    `</span>);</div><div class="line">    <span class="keyword">var</span> iframe = <span class="built_in">document</span>.createElement(<span class="string">'iframe'</span>);</div><div class="line">    iframe.name = <span class="string">'csrf'</span>;</div><div class="line">    iframe.style.display = <span class="string">'none'</span>;</div><div class="line">    <span class="built_in">document</span>.body.appendChild(iframe);</div><div class="line"></div><div class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="built_in">document</span>.querySelector(<span class="string">'[name=commentForm]'</span>).submit();</div><div class="line">    &#125;,<span class="number">1000</span>);<span class="comment">//实际中不会延迟</span></div><div class="line"></div><div class="line">&lt;<span class="regexp">/script&gt;      </span></div><div class="line"><span class="regexp">/</span><span class="regexp">/通过get</span></div><div class="line"><span class="regexp">&lt;a href="http:/</span><span class="regexp">/localhost:8088/</span>ajax/addComment?postId=<span class="number">13</span>&amp;content=xxxxx<span class="string">"&gt;点击这里有钱拿&lt;/a&gt; //通过点击发送伪造请求</span></div><div class="line"><span class="string">&lt;img src="</span>http:<span class="comment">//localhost:8088/ajax/addComment?postId=13&amp;content=xxxxx"&gt;    //不用点击就发送请求</span></div><div class="line">&lt;img src=<span class="string">"http://localhost:8088/ajax/addComment?postId=13&amp;content=&lt;a href=http://localhost:8088/ajax/addComment?postId=13&amp;content=xxxxx&gt;"</span>&gt;  <span class="comment">//这样也可以  网络蠕虫，危害很大</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//通过post</span></span><br><span class="line">&lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="built_in">document</span>.write(<span class="string">`</span></span><br><span class="line"><span class="string">        &lt;form name="commentForm" targer="csrf" method="post" action="http://localhostt:8088/post/addComment"&gt;</span></span><br><span class="line"><span class="string">            &lt;input name="postId" type="hidden" value="13"&gt;</span></span><br><span class="line"><span class="string">            &lt;textarea name="comment"&gt;来自CSRF&lt;/textarea&gt;</span></span><br><span class="line"><span class="string">        &lt;/form&gt;</span></span><br><span class="line"><span class="string">    `</span>);</span><br><span class="line">    <span class="keyword">var</span> iframe = <span class="built_in">document</span>.createElement(<span class="string">'iframe'</span>);</span><br><span class="line">    iframe.name = <span class="string">'csrf'</span>;</span><br><span class="line">    iframe.style.display = <span class="string">'none'</span>;</span><br><span class="line">    <span class="built_in">document</span>.body.appendChild(iframe);</span><br><span class="line"></span><br><span class="line">    setTimeout(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">document</span>.querySelector(<span class="string">'[name=commentForm]'</span>).submit();</span><br><span class="line">    &#125;,<span class="number">1000</span>);<span class="comment">//实际中不会延迟</span></span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/script&gt;      </span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/通过get</span></span><br><span class="line"><span class="regexp">&lt;a href="http:/</span><span class="regexp">/localhost:8088/</span>ajax/addComment?postId=<span class="number">13</span>&amp;content=xxxxx<span class="string">"&gt;点击这里有钱拿&lt;/a&gt; //通过点击发送伪造请求</span></span><br><span class="line"><span class="string">&lt;img src="</span>http:<span class="comment">//localhost:8088/ajax/addComment?postId=13&amp;content=xxxxx"&gt;    //不用点击就发送请求</span></span><br><span class="line">&lt;img src=<span class="string">"http://localhost:8088/ajax/addComment?postId=13&amp;content=&lt;a href=http://localhost:8088/ajax/addComment?postId=13&amp;content=xxxxx&gt;"</span>&gt;  <span class="comment">//这样也可以  网络蠕虫，危害很大</span></span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <h4 id="CSRF攻击原理"><a href="#CSRF攻击原理" class="headerlink" title="CSRF攻击原理"></a>CSRF攻击原理</h4><p>用户登录A网站</p>
 <p>A网站后台确认身份后发送cookie到用户浏览器</p>
@@ -361,7 +361,7 @@
 <h4 id="CSRF攻击防御"><a href="#CSRF攻击防御" class="headerlink" title="CSRF攻击防御"></a>CSRF攻击防御</h4><p>攻击者网站会携带用户的cookies,所以可以禁止第三发网站带cookies，cookies里面有个same-site属性，当请求来自同一个站点时才有该属性<br>不妨问A网站的前端，即在目标网站前端加入验证信息，如验证码和token<br>token是一个随机字符串，只能通过目标网站获取，所以可以防止CSRF攻击。</p>
 <p>随机生成的token要放在表单和cookies里，这样提交请求的时候可以比对是否一一致。可以防止攻击者随机编造token<br>若果是ajax请求就把token放在meta和cookies里，这样效果就和表单提交一样了</p>
 <p>http里有个referer是指向源网站，若指向攻击中网站B则表示是伪造的请求<br>直接判断referer中是否包含目标网站域名即可，但是如果通过目标网站加上参数也为攻击</p>
-<p><a href="http://gongji.com?haha=mubiao.com" target="_blank" rel="external">http://gongji.com?haha=mubiao.com</a></p>
+<p><a href="http://gongji.com?haha=mubiao.com" target="_blank" rel="noopener">http://gongji.com?haha=mubiao.com</a></p>
 <p>这样也可以攻击了</p>
 <p>所以这里的判断是有问题的，要利用正则而不是简单的indexOf()判断</p>
 
@@ -453,7 +453,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -464,9 +464,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="KxinLin" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="KxinLin">
           <p class="site-author-name" itemprop="name">KxinLin</p>
            
               <p class="site-description motion-element" itemprop="description">每隔一段时间把笔记整理到这里来</p>
@@ -477,7 +475,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">75</span>
+                <span class="site-state-item-count">76</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -488,7 +486,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -545,10 +543,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

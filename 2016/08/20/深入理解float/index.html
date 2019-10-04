@@ -6,10 +6,10 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -39,7 +39,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -73,21 +73,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
 
 
 
@@ -133,7 +133,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/08/20/深入理解float/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/08/20/深入理解float/">
 
 
 
@@ -167,7 +167,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -197,7 +197,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -207,7 +207,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -217,7 +217,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -260,7 +260,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="KxinLin">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -296,7 +296,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -356,16 +356,16 @@
 <li>clear</li>
 <li>BFC/haslayout</li>
 </ol>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">//权衡利弊后的方法</div><div class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</div><div class="line">  <span class="attribute">content</span>: <span class="string">''</span>;</div><div class="line">  <span class="attribute">display</span>: block;</div><div class="line">  <span class="attribute">height</span>: <span class="number">0</span>;</div><div class="line">  <span class="attribute">overflow</span>: hidden;</div><div class="line">  <span class="attribute">clear</span>: both;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.clear</span> &#123;</div><div class="line">  *zoom: 1;  //为兼容ie6</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">clearfix</span>应用在包含浮动子元素的</div><div class="line">父级元素上面，不要滥用</div><div class="line"></div><div class="line">//更好的方法</div><div class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</div><div class="line">  <span class="attribute">content</span>: <span class="string">''</span>;</div><div class="line">  <span class="attribute">display</span>: table;</div><div class="line">  <span class="attribute">clear</span>: both;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.clear</span> &#123;</div><div class="line">  *zoom: 1;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">//权衡利弊后的方法</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">''</span>;</span><br><span class="line">  <span class="attribute">display</span>: block;</span><br><span class="line">  <span class="attribute">height</span>: <span class="number">0</span>;</span><br><span class="line">  <span class="attribute">overflow</span>: hidden;</span><br><span class="line">  <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clear</span> &#123;</span><br><span class="line">  *zoom: 1;  //为兼容ie6</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">clearfix</span>应用在包含浮动子元素的</span><br><span class="line">父级元素上面，不要滥用</span><br><span class="line"></span><br><span class="line">//更好的方法</span><br><span class="line"><span class="selector-class">.clearfix</span><span class="selector-pseudo">:after</span> &#123;</span><br><span class="line">  <span class="attribute">content</span>: <span class="string">''</span>;</span><br><span class="line">  <span class="attribute">display</span>: table;</span><br><span class="line">  <span class="attribute">clear</span>: both;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.clear</span> &#123;</span><br><span class="line">  *zoom: 1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h5 id="float的-block化和去空格化"><a href="#float的-block化和去空格化" class="headerlink" title="float的 block化和去空格化"></a>float的 <code>block化</code>和<code>去空格化</code></h5><ol>
 <li>设置float后，元素display属性会变为block</li>
 <li>float的去空格化的原理是文字环绕，当四个button标签</li>
 </ol>
 <p>由于html换行导致的空隙会产生空格，设置float后可以去除<br>间隙导致的空格</p>
 <p>span会紧跟在后面</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">style</span>=<span class="string">"float: left;"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">style</span>=<span class="string">"float: left;"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">style</span>=<span class="string">"float: left;"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">button</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>111<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">style</span>=<span class="string">"float: left;"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">style</span>=<span class="string">"float: left;"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">style</span>=<span class="string">"float: left;"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">span</span>&gt;</span>111<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>这里空格是自己定义的，设置float后，这些空格会跟随在后面，span跟随在空格后面</p>
-<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">style</span>=<span class="string">"float: left;"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">button</span>&gt;</span>&amp;nbsp;<span class="tag">&lt;<span class="name">button</span> <span class="attr">style</span>=<span class="string">"float: left;"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">button</span>&gt;</span>&amp;nbsp;<span class="tag">&lt;<span class="name">button</span> <span class="attr">style</span>=<span class="string">"float: left;"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">button</span>&gt;</span>&amp;nbsp;<span class="tag">&lt;<span class="name">span</span>&gt;</span>111<span class="tag">&lt;/<span class="name">span</span>&gt;</span></div></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">style</span>=<span class="string">"float: left;"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">button</span>&gt;</span>&amp;nbsp;<span class="tag">&lt;<span class="name">button</span> <span class="attr">style</span>=<span class="string">"float: left;"</span>&gt;</span>2<span class="tag">&lt;/<span class="name">button</span>&gt;</span>&amp;nbsp;<span class="tag">&lt;<span class="name">button</span> <span class="attr">style</span>=<span class="string">"float: left;"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">button</span>&gt;</span>&amp;nbsp;<span class="tag">&lt;<span class="name">span</span>&gt;</span>111<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>两者区别就是<code>&amp;nbsp;</code>是占据空间的，而标签之间的空格和换行是不占据的，所以<code>&amp;nbsp;</code>可以被看到，<br>前者产生的空隙不能被看到</p>
 
       
@@ -456,7 +456,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -467,9 +467,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="KxinLin" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="KxinLin">
           <p class="site-author-name" itemprop="name">KxinLin</p>
            
               <p class="site-description motion-element" itemprop="description">每隔一段时间把笔记整理到这里来</p>
@@ -480,7 +478,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">75</span>
+                <span class="site-state-item-count">76</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -491,7 +489,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -548,10 +546,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

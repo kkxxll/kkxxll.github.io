@@ -6,10 +6,10 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -39,7 +39,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -73,21 +73,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
 
 
 
@@ -133,7 +133,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/07/20/模块化/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/07/20/模块化/">
 
 
 
@@ -167,7 +167,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -197,7 +197,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -207,7 +207,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -217,7 +217,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -260,7 +260,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="KxinLin">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -296,7 +296,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -356,10 +356,10 @@
 </ul>
 <ul>
 <li><p>不使用模块化的情况</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">util.js 有个getFormatDate函数</div><div class="line">a-util.js 有个aGetFormatDate函数依赖于getFormatDate函数</div><div class="line">a.js 使用aGetFormatDate函数</div><div class="line"></div><div class="line">//util.js</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">getFormatDate</span></span>() &#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">//a-util.js</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">aGetFormatDate</span></span>() &#123;</div><div class="line">    returnn getFormatDate();</div><div class="line">&#125;</div><div class="line">//a.js</div><div class="line">var dt = new Date();</div><div class="line">aGetFormatDate(dt);</div><div class="line"></div><div class="line">//使用中的问题</div><div class="line">&lt;script src=<span class="string">"util.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;script src=<span class="string">"a-util.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;script src=<span class="string">"a.js"</span>&gt;&lt;/script&gt;</div><div class="line">.js的引入要按照代码引用的顺序</div><div class="line">这些代码中的函数必须是全局变量，才能暴露给使用方。 全局变量污染</div><div class="line">a.js知道引用a-util.js，但它知道还需要依赖于util.js吗</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">util.js 有个getFormatDate函数</span><br><span class="line">a-util.js 有个aGetFormatDate函数依赖于getFormatDate函数</span><br><span class="line">a.js 使用aGetFormatDate函数</span><br><span class="line"></span><br><span class="line">//util.js</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">getFormatDate</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">//a-util.js</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">aGetFormatDate</span></span>() &#123;</span><br><span class="line">    returnn getFormatDate();</span><br><span class="line">&#125;</span><br><span class="line">//a.js</span><br><span class="line">var dt = new Date();</span><br><span class="line">aGetFormatDate(dt);</span><br><span class="line"></span><br><span class="line">//使用中的问题</span><br><span class="line">&lt;script src=<span class="string">"util.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=<span class="string">"a-util.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;script src=<span class="string">"a.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">.js的引入要按照代码引用的顺序</span><br><span class="line">这些代码中的函数必须是全局变量，才能暴露给使用方。 全局变量污染</span><br><span class="line">a.js知道引用a-util.js，但它知道还需要依赖于util.js吗</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>使用模块化</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">//util.js</div><div class="line"><span class="built_in">export</span> &#123;</div><div class="line">    getFormatDate: <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  //a-util.js</div><div class="line">  var getFormatDate = require(<span class="string">'util.js'</span>)</div><div class="line">  <span class="built_in">export</span> &#123;</div><div class="line">      aGetFormatDate: <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">          returnn getFormatDate();</div><div class="line">      &#125;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  //a.js</div><div class="line">  var aGetFormatDate = require(<span class="string">'a-util.js'</span>)</div><div class="line">  var dt = new Date();</div><div class="line">  aGetFormatDate(dt);</div><div class="line"></div><div class="line">  最后只要&lt;script src=<span class="string">"a.js"</span>&gt;&lt;/script&gt;,其他的根据依赖关系子自动引用</div><div class="line">  那两个函数，没必要做成全局变量，不会带来污染和覆盖</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//util.js</span><br><span class="line"><span class="built_in">export</span> &#123;</span><br><span class="line">    getFormatDate: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  //a-util.js</span><br><span class="line">  var getFormatDate = require(<span class="string">'util.js'</span>)</span><br><span class="line">  <span class="built_in">export</span> &#123;</span><br><span class="line">      aGetFormatDate: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">          returnn getFormatDate();</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  //a.js</span><br><span class="line">  var aGetFormatDate = require(<span class="string">'a-util.js'</span>)</span><br><span class="line">  var dt = new Date();</span><br><span class="line">  aGetFormatDate(dt);</span><br><span class="line"></span><br><span class="line">  最后只要&lt;script src=<span class="string">"a.js"</span>&gt;&lt;/script&gt;,其他的根据依赖关系子自动引用</span><br><span class="line">  那两个函数，没必要做成全局变量，不会带来污染和覆盖</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>AMD (异步模块定义)</p>
 <ul>
@@ -370,7 +370,7 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div></pre></td><td class="code"><pre><div class="line">//util.js</div><div class="line">define(<span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">    <span class="built_in">return</span> &#123;</div><div class="line">        getFormatDate: <span class="keyword">function</span>(date, <span class="built_in">type</span>) &#123;</div><div class="line">            <span class="keyword">if</span>(<span class="built_in">type</span>===1) &#123;</div><div class="line">                <span class="built_in">return</span> <span class="string">'2017-06-5'</span></div><div class="line">            &#125;</div><div class="line">            <span class="keyword">if</span>(<span class="built_in">type</span>===2) &#123;</div><div class="line">                <span class="built_in">return</span> <span class="string">'2017年6月5日'</span></div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">//a-util.js</div><div class="line">define([<span class="string">'./util.js'</span>], <span class="keyword">function</span>(util) &#123;</div><div class="line">    <span class="built_in">return</span> &#123;</div><div class="line">        aGetFormatDate: <span class="keyword">function</span>(date) &#123;</div><div class="line">            <span class="built_in">return</span> util.getFormatDate(date, 2)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line"></div><div class="line">//a.js</div><div class="line">define([<span class="string">'./a-util.js'</span>], <span class="keyword">function</span>(aUtil) &#123;</div><div class="line">    <span class="built_in">return</span> &#123;</div><div class="line">        printDate: <span class="keyword">function</span>(date) &#123;</div><div class="line">            console.log(aUtil.aGetFormatDate(date))</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;)</div><div class="line">//main.js</div><div class="line"></div><div class="line">require([<span class="string">'./a.js'</span>], <span class="keyword">function</span>(a) &#123;</div><div class="line">    var date = new Date()</div><div class="line">    a.printDate(date)</div><div class="line">&#125;)</div><div class="line"></div><div class="line">&lt;!DOCTYPE html&gt;</div><div class="line">&lt;html lang=<span class="string">"en"</span>&gt;</div><div class="line">&lt;head&gt;</div><div class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</div><div class="line">    &lt;title&gt;Document&lt;/title&gt;</div><div class="line">&lt;/head&gt;</div><div class="line">&lt;body&gt;</div><div class="line">&lt;script data-main=<span class="string">"./main.js"</span> src=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.3/require.min.js"</span>&gt;&lt;/script&gt;</div><div class="line">&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div><div class="line">该页面打印出结果</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">//util.js</span><br><span class="line">define(<span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">        getFormatDate: <span class="keyword">function</span>(date, <span class="built_in">type</span>) &#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">type</span>===1) &#123;</span><br><span class="line">                <span class="built_in">return</span> <span class="string">'2017-06-5'</span></span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">type</span>===2) &#123;</span><br><span class="line">                <span class="built_in">return</span> <span class="string">'2017年6月5日'</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">//a-util.js</span><br><span class="line">define([<span class="string">'./util.js'</span>], <span class="keyword">function</span>(util) &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">        aGetFormatDate: <span class="keyword">function</span>(date) &#123;</span><br><span class="line">            <span class="built_in">return</span> util.getFormatDate(date, 2)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">//a.js</span><br><span class="line">define([<span class="string">'./a-util.js'</span>], <span class="keyword">function</span>(aUtil) &#123;</span><br><span class="line">    <span class="built_in">return</span> &#123;</span><br><span class="line">        printDate: <span class="keyword">function</span>(date) &#123;</span><br><span class="line">            console.log(aUtil.aGetFormatDate(date))</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line">//main.js</span><br><span class="line"></span><br><span class="line">require([<span class="string">'./a.js'</span>], <span class="keyword">function</span>(a) &#123;</span><br><span class="line">    var date = new Date()</span><br><span class="line">    a.printDate(date)</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;title&gt;Document&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;script data-main=<span class="string">"./main.js"</span> src=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.3/require.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br><span class="line">该页面打印出结果</span><br></pre></td></tr></table></figure>
 <ul>
 <li>CommonJS<ul>
 <li>nodejs模块化规范，现被大量用前段，原因：<ul>
@@ -382,9 +382,9 @@
 </ul>
 </li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//util.js</div><div class="line">module.export = &#123;</div><div class="line">    getFormatDate: <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">//a-util.js</div><div class="line">var util = require(<span class="string">'util.js'</span>)</div><div class="line">module.export = &#123;</div><div class="line">    aGetFormatDate: <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">        <span class="built_in">return</span> util.getFormatDate()</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//util.js</span><br><span class="line">module.export = &#123;</span><br><span class="line">    getFormatDate: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//a-util.js</span><br><span class="line">var util = require(<span class="string">'util.js'</span>)</span><br><span class="line">module.export = &#123;</span><br><span class="line">    aGetFormatDate: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        <span class="built_in">return</span> util.getFormatDate()</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h6 id="11总结"><a href="#11总结" class="headerlink" title="11总结"></a>11总结</h6><ul>
-<li>AMD和CommondJS的使用场景<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">需要异步加载JS,使用AMD</div><div class="line">使用npm之后建议使用CommonJS</div></pre></td></tr></table></figure>
+<li>AMD和CommondJS的使用场景<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">需要异步加载JS,使用AMD</span><br><span class="line">使用npm之后建议使用CommonJS</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -476,7 +476,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -487,9 +487,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="KxinLin" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="KxinLin">
           <p class="site-author-name" itemprop="name">KxinLin</p>
            
               <p class="site-description motion-element" itemprop="description">每隔一段时间把笔记整理到这里来</p>
@@ -500,7 +498,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">75</span>
+                <span class="site-state-item-count">76</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -511,7 +509,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -568,10 +566,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

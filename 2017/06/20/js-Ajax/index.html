@@ -6,10 +6,10 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -39,7 +39,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -73,21 +73,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
 
 
 
@@ -133,7 +133,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/20/js-Ajax/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/06/20/js-Ajax/">
 
 
 
@@ -167,7 +167,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -197,7 +197,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -207,7 +207,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -217,7 +217,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -260,7 +260,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="KxinLin">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -296,7 +296,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -352,34 +352,34 @@
 <li><p>跨域</p>
 </li>
 <li><p>XMLHttpRequest</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">var xhr = new XMLHttpRequest();</div><div class="line">xhr.open(<span class="string">"GET"</span>, <span class="string">"/api"</span>, <span class="literal">false</span>);</div><div class="line">xhr.onreadystatechange = <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">    //这里的函数异步执行</div><div class="line">    <span class="keyword">if</span>(xhr.readyState == 4) &#123;</div><div class="line">        <span class="keyword">if</span>(xhr.status == 200) &#123;</div><div class="line">            console.log(xhr.responseText)</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">xhr.send(null);</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">var xhr = new XMLHttpRequest();</span><br><span class="line">xhr.open(<span class="string">"GET"</span>, <span class="string">"/api"</span>, <span class="literal">false</span>);</span><br><span class="line">xhr.onreadystatechange = <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">    //这里的函数异步执行</span><br><span class="line">    <span class="keyword">if</span>(xhr.readyState == 4) &#123;</span><br><span class="line">        <span class="keyword">if</span>(xhr.status == 200) &#123;</span><br><span class="line">            console.log(xhr.responseText)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">xhr.send(null);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <a id="more"></a>
 <ul>
 <li><p>状态码说明</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">// readyState</div><div class="line">// 0 (未初始化) 还没有调用send()方法</div><div class="line">// 1 (载入) 已调用send()方法，正在发送请求</div><div class="line">// 2 (载入完成) send()方法执行完成，已经接收到全部响应内容</div><div class="line">// 3 (交互) 正在解析响应内容</div><div class="line">// 4 (完成) 响应内容解析完成，可以在客户端调用了</div><div class="line"></div><div class="line">//statue</div><div class="line">//2XX 表示成功处理请求</div><div class="line">//3XX 需要重定向，浏览器自动跳转</div><div class="line">//4XX 客户端请求错误</div><div class="line">//5XX 服务器端错误</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">// readyState</span><br><span class="line">// 0 (未初始化) 还没有调用send()方法</span><br><span class="line">// 1 (载入) 已调用send()方法，正在发送请求</span><br><span class="line">// 2 (载入完成) send()方法执行完成，已经接收到全部响应内容</span><br><span class="line">// 3 (交互) 正在解析响应内容</span><br><span class="line">// 4 (完成) 响应内容解析完成，可以在客户端调用了</span><br><span class="line"></span><br><span class="line">//statue</span><br><span class="line">//2XX 表示成功处理请求</span><br><span class="line">//3XX 需要重定向，浏览器自动跳转</span><br><span class="line">//4XX 客户端请求错误</span><br><span class="line">//5XX 服务器端错误</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>跨域</p>
 <ul>
 <li><p>什么时跨域</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">浏览器有同源策略，不允许ajax访问其他域的几口</div><div class="line">跨域条件:协议、域名、端口又一个不同就算跨域</div><div class="line">但是有三个标签允许跨域加载资源:</div><div class="line">&lt;img src=<span class="string">""</span>&gt;</div><div class="line">&lt;link href=<span class="string">""</span>&gt;</div><div class="line">&lt;script src=<span class="string">""</span>&gt;</div><div class="line">三个标签的场景</div><div class="line">&lt;img&gt;用于打点统计，统计网站可能时其他域</div><div class="line">&lt;link&gt;&lt;script&gt; 可以使用CDN,CDN的也是其他域</div><div class="line">&lt;script&gt;可以用于JSONP</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">浏览器有同源策略，不允许ajax访问其他域的几口</span><br><span class="line">跨域条件:协议、域名、端口又一个不同就算跨域</span><br><span class="line">但是有三个标签允许跨域加载资源:</span><br><span class="line">&lt;img src=<span class="string">""</span>&gt;</span><br><span class="line">&lt;link href=<span class="string">""</span>&gt;</span><br><span class="line">&lt;script src=<span class="string">""</span>&gt;</span><br><span class="line">三个标签的场景</span><br><span class="line">&lt;img&gt;用于打点统计，统计网站可能时其他域</span><br><span class="line">&lt;link&gt;&lt;script&gt; 可以使用CDN,CDN的也是其他域</span><br><span class="line">&lt;script&gt;可以用于JSONP</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>JSONP</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">JSONP实现原理：</div><div class="line">加载 http:<span class="comment">//xxxx/a.html</span></div><div class="line">不一定服务器真正有一个a.html文件</div><div class="line">服务器可以根据请求，动态生成一个文件，然后返回</div><div class="line"></div><div class="line">例如某个网站跨域访问豆瓣网的一个接口</div><div class="line">豆瓣网给一个地址 http:<span class="comment">//xxx/api.js</span></div><div class="line">返回的格式如 callback(&#123;<span class="attr">x</span>:<span class="number">100</span>,<span class="attr">y</span>:<span class="number">200</span>&#125;) (可动态生成)</div><div class="line"></div><div class="line">这时该网站编辑代码</div><div class="line">&lt;script&gt;</div><div class="line"><span class="built_in">window</span>.callback = <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">    <span class="comment">//这是跨域得到的信息</span></div><div class="line">    <span class="built_in">console</span>.log(data);</div><div class="line">&#125;</div><div class="line">&lt;<span class="regexp">/script&gt;</span></div><div class="line"><span class="regexp">&lt;script src="http:/</span><span class="regexp">/xxx/</span>api.js<span class="string">"&gt;&lt;/script&gt;</span></div><div class="line"><span class="string">&lt;!-- 以上将返回 callbak(&#123;x:100, y:200&#125;) --&gt;</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">//我们在网站中定义了 callback函数</span></div><div class="line"><span class="string">//所以在访问接口时可以调用这个函数，就可以的得到想要的数据</span></div><div class="line"><span class="string"></span></div><div class="line"><span class="string">重点是&lt;script&gt;是跨域的，可以访问其他域，所以利用这个特点就可以拿到其他域的资源，这就是JSONP</span></div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">JSONP实现原理：</span><br><span class="line">加载 http:<span class="comment">//xxxx/a.html</span></span><br><span class="line">不一定服务器真正有一个a.html文件</span><br><span class="line">服务器可以根据请求，动态生成一个文件，然后返回</span><br><span class="line"></span><br><span class="line">例如某个网站跨域访问豆瓣网的一个接口</span><br><span class="line">豆瓣网给一个地址 http:<span class="comment">//xxx/api.js</span></span><br><span class="line">返回的格式如 callback(&#123;<span class="attr">x</span>:<span class="number">100</span>,<span class="attr">y</span>:<span class="number">200</span>&#125;) (可动态生成)</span><br><span class="line"></span><br><span class="line">这时该网站编辑代码</span><br><span class="line">&lt;script&gt;</span><br><span class="line"><span class="built_in">window</span>.callback = <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="comment">//这是跨域得到的信息</span></span><br><span class="line">    <span class="built_in">console</span>.log(data);</span><br><span class="line">&#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;script src="http:/</span><span class="regexp">/xxx/</span>api.js<span class="string">"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="string">&lt;!-- 以上将返回 callbak(&#123;x:100, y:200&#125;) --&gt;</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">//我们在网站中定义了 callback函数</span></span><br><span class="line"><span class="string">//所以在访问接口时可以调用这个函数，就可以的得到想要的数据</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">重点是&lt;script&gt;是跨域的，可以访问其他域，所以利用这个特点就可以拿到其他域的资源，这就是JSONP</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>服务器端设置 http header</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">服务器端设置http header</div><div class="line">注意不同的后端语言写法可能不一样</div><div class="line"></div><div class="line">response.setHeader(<span class="string">"Access-Control-Allow-Origin"</span>,<span class="string">"http://a.com, http://b.com"</span>)</div><div class="line">//表示允许http://a.com和http://b.com 来访问</div><div class="line">// response.setHeader(<span class="string">"Access-Control-Allow-Origin"</span>,<span class="string">"*"</span>)</div><div class="line">// * 表示所有站点可以来访问，但不建议这么写</div><div class="line">response.setHeader(<span class="string">"Access-Control-Allow-Headers"</span>,<span class="string">"X-Requested-With"</span>);</div><div class="line">response.setHeader(<span class="string">"Access-Control-Allow-Methods"</span>,<span class="string">"PUT,POST,GET,DELETE,OPTIONS"</span>);</div><div class="line">// 接收跨域的cookie</div><div class="line">response.setHeader(<span class="string">"Access-Control-Allow-Credentials"</span>,<span class="string">"true"</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">服务器端设置http header</span><br><span class="line">注意不同的后端语言写法可能不一样</span><br><span class="line"></span><br><span class="line">response.setHeader(<span class="string">"Access-Control-Allow-Origin"</span>,<span class="string">"http://a.com, http://b.com"</span>)</span><br><span class="line">//表示允许http://a.com和http://b.com 来访问</span><br><span class="line">// response.setHeader(<span class="string">"Access-Control-Allow-Origin"</span>,<span class="string">"*"</span>)</span><br><span class="line">// * 表示所有站点可以来访问，但不建议这么写</span><br><span class="line">response.setHeader(<span class="string">"Access-Control-Allow-Headers"</span>,<span class="string">"X-Requested-With"</span>);</span><br><span class="line">response.setHeader(<span class="string">"Access-Control-Allow-Methods"</span>,<span class="string">"PUT,POST,GET,DELETE,OPTIONS"</span>);</span><br><span class="line">// 接收跨域的cookie</span><br><span class="line">response.setHeader(<span class="string">"Access-Control-Allow-Credentials"</span>,<span class="string">"true"</span>);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
 <h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h6><ul>
 <li><p>手动写一个ajax，不依赖第三方库</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">```</div><div class="line">- 跨域的几种实现方式</div><div class="line">    ```bash</div><div class="line">    JSONP</div><div class="line">    服务器端设置http header</div><div class="line">    第二种是一个解决跨域的简洁方法，需要服务器端来做</div><div class="line">    知道有这方法即可，无须深究</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">```</span><br><span class="line">- 跨域的几种实现方式</span><br><span class="line">    ```bash</span><br><span class="line">    JSONP</span><br><span class="line">    服务器端设置http header</span><br><span class="line">    第二种是一个解决跨域的简洁方法，需要服务器端来做</span><br><span class="line">    知道有这方法即可，无须深究</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>跨域注意事项</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">所有的跨域请求必须经过信息提供方允许</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">所有的跨域请求必须经过信息提供方允许</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -471,7 +471,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -482,9 +482,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="KxinLin" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="KxinLin">
           <p class="site-author-name" itemprop="name">KxinLin</p>
            
               <p class="site-description motion-element" itemprop="description">每隔一段时间把笔记整理到这里来</p>
@@ -495,7 +493,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">75</span>
+                <span class="site-state-item-count">76</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -506,7 +504,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -563,10 +561,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

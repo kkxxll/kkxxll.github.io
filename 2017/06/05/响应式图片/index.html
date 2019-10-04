@@ -6,10 +6,10 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -39,7 +39,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -73,21 +73,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
 
 
 
@@ -133,7 +133,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/06/05/响应式图片/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/06/05/响应式图片/">
 
 
 
@@ -167,7 +167,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -197,7 +197,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -207,7 +207,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -217,7 +217,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -260,7 +260,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="KxinLin">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -296,7 +296,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -346,9 +346,9 @@
 
       
         <p>在移动端上加载一个pc端的图片是很耗资源的,所以要实现响应式图片</p>
-<h6 id="1-js或服务端控制图片的加载"><a href="#1-js或服务端控制图片的加载" class="headerlink" title="1. js或服务端控制图片的加载"></a>1. js或服务端控制图片的加载</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//根据不同屏幕显示不同的图片</span></div><div class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="function"><span class="keyword">function</span> <span class="title">makeImageResponsive</span>(<span class="params"></span>) </span>&#123;</div><div class="line">        <span class="keyword">var</span> width = $(<span class="built_in">window</span>).width();</div><div class="line">        <span class="keyword">var</span> img = $(<span class="string">'.content img'</span>);</div><div class="line">        <span class="keyword">if</span>(width &lt;= <span class="number">480</span>) &#123;</div><div class="line">            img.attr(<span class="string">'src'</span>, <span class="string">'480.jpg'</span>);</div><div class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(width &lt;= <span class="number">800</span>) &#123;</div><div class="line">            img.attr(<span class="string">'src'</span>, <span class="string">'800.jpg'</span>);</div><div class="line">        &#125;<span class="keyword">else</span> &#123;</div><div class="line">            img.attr(<span class="string">'src'</span>, <span class="string">'1600.jpg'</span>);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    $(<span class="built_in">window</span>).on(<span class="string">'resize load'</span>, makeImageResponsive)</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<h6 id="1-js或服务端控制图片的加载"><a href="#1-js或服务端控制图片的加载" class="headerlink" title="1. js或服务端控制图片的加载"></a>1. js或服务端控制图片的加载</h6><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//根据不同屏幕显示不同的图片</span></span><br><span class="line">$(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">makeImageResponsive</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> width = $(<span class="built_in">window</span>).width();</span><br><span class="line">        <span class="keyword">var</span> img = $(<span class="string">'.content img'</span>);</span><br><span class="line">        <span class="keyword">if</span>(width &lt;= <span class="number">480</span>) &#123;</span><br><span class="line">            img.attr(<span class="string">'src'</span>, <span class="string">'480.jpg'</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">if</span>(width &lt;= <span class="number">800</span>) &#123;</span><br><span class="line">            img.attr(<span class="string">'src'</span>, <span class="string">'800.jpg'</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            img.attr(<span class="string">'src'</span>, <span class="string">'1600.jpg'</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    $(<span class="built_in">window</span>).on(<span class="string">'resize load'</span>, makeImageResponsive)</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
-<h6 id="2-使用img的srcset属性"><a href="#2-使用img的srcset属性" class="headerlink" title="2. 使用img的srcset属性"></a>2. 使用img的srcset属性</h6><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"1.jpg"</span> <span class="attr">srcset</span>=<span class="string">"1.jpg 480w, 2.jpg 800w, 3.jpg 1600w"</span>&gt;</span></div></pre></td></tr></table></figure>
+<h6 id="2-使用img的srcset属性"><a href="#2-使用img的srcset属性" class="headerlink" title="2. 使用img的srcset属性"></a>2. 使用img的srcset属性</h6><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"1.jpg"</span> <span class="attr">srcset</span>=<span class="string">"1.jpg 480w, 2.jpg 800w, 3.jpg 1600w"</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>浏览器会在不同的width下会加载不同的图片，当较大的那个图片加载了以后，不管width变的多小，都会显示已加载的所有图片中最大的那张，因为浏览器认为既然大的图片已经加载了就说明也缓存了，所以直接显示大的那张最清晰</p>
 <h6 id="3-以上用srcset属性的方法很多浏览器不支持，还有一种方法是利用svg"><a href="#3-以上用srcset属性的方法很多浏览器不支持，还有一种方法是利用svg" class="headerlink" title="3. 以上用srcset属性的方法很多浏览器不支持，还有一种方法是利用svg"></a>3. 以上用<code>srcset</code>属性的方法很多浏览器不支持，还有一种方法是利用svg</h6><p>svg是一个矢量图，随着缩放分辨率不会变</p>
 
@@ -440,7 +440,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -451,9 +451,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="KxinLin" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="KxinLin">
           <p class="site-author-name" itemprop="name">KxinLin</p>
            
               <p class="site-description motion-element" itemprop="description">每隔一段时间把笔记整理到这里来</p>
@@ -464,7 +462,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">75</span>
+                <span class="site-state-item-count">76</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -475,7 +473,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -532,10 +530,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

@@ -6,10 +6,10 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -39,7 +39,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -73,21 +73,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
 
 
 
@@ -133,7 +133,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/09/01/less-scss区别/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/09/01/less-scss区别/">
 
 
 
@@ -167,7 +167,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -197,7 +197,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -207,7 +207,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -217,7 +217,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -260,7 +260,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="KxinLin">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -296,7 +296,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -347,19 +347,19 @@
       
         <ul>
 <li>变量：LESS使用@，而Sass使用$</li>
-<li>混合<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div></pre></td><td class="code"><pre><div class="line">//less</div><div class="line"><span class="selector-class">.border</span> &#123;</div><div class="line">  <span class="attribute">border-top</span>: <span class="number">1px</span> dotted <span class="number">#333</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">article</span><span class="selector-class">.post</span> &#123;</div><div class="line">  <span class="attribute">background</span>: <span class="number">#eee</span>;</div><div class="line">  .border;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">ul</span><span class="selector-class">.menu</span> &#123;</div><div class="line">  <span class="attribute">background</span>: <span class="number">#ccc</span>;</div><div class="line">  .border;</div><div class="line">&#125;</div><div class="line">//sass 添加@minix声明，规定它是个嵌套，通过@include来调用</div><div class="line">@<span class="keyword">mixin</span> border &#123;</div><div class="line">  <span class="selector-tag">border-top</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">dotted</span> <span class="selector-id">#333</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">article</span><span class="selector-class">.post</span> &#123;</div><div class="line">  <span class="attribute">background</span>: <span class="number">#eee</span>;</div><div class="line">  @include border;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="selector-tag">ul</span><span class="selector-class">.menu</span> &#123;</div><div class="line">  <span class="attribute">background</span>: <span class="number">#ccc</span>;</div><div class="line">  @include border;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<li>混合<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">//less</span><br><span class="line"><span class="selector-class">.border</span> &#123;</span><br><span class="line">  <span class="attribute">border-top</span>: <span class="number">1px</span> dotted <span class="number">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">article</span><span class="selector-class">.post</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#eee</span>;</span><br><span class="line">  .border;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">ul</span><span class="selector-class">.menu</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#ccc</span>;</span><br><span class="line">  .border;</span><br><span class="line">&#125;</span><br><span class="line">//sass 添加@minix声明，规定它是个嵌套，通过@include来调用</span><br><span class="line">@<span class="keyword">mixin</span> border &#123;</span><br><span class="line">  <span class="selector-tag">border-top</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">dotted</span> <span class="selector-id">#333</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">article</span><span class="selector-class">.post</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#eee</span>;</span><br><span class="line">  @include border;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">ul</span><span class="selector-class">.menu</span> &#123;</span><br><span class="line">  <span class="attribute">background</span>: <span class="number">#ccc</span>;</span><br><span class="line">  @include border;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <a id="more"></a>
 <ul>
 <li><p>继承 less中没提供</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.menu</span> &#123;</div><div class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ddd</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-class">.footer</span> &#123;</div><div class="line">  @extend .menu;</div><div class="line">&#125;</div><div class="line"><span class="comment">/* 上面的规则和下面的规则是一样的效果 */</span></div><div class="line"><span class="selector-class">.menu</span>, <span class="selector-class">.footer</span> &#123;</div><div class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ddd</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.menu</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ddd</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.footer</span> &#123;</span><br><span class="line">  @extend .menu;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">/* 上面的规则和下面的规则是一样的效果 */</span></span><br><span class="line"><span class="selector-class">.menu</span>, <span class="selector-class">.footer</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid <span class="number">#ddd</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>条件语句 less中不支持</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/* Sass中简单的if语句 */</span></div><div class="line">@<span class="keyword">if</span> lightness($color) &gt; <span class="number">30%</span> &#123;</div><div class="line">  <span class="selector-tag">background-color</span>: <span class="selector-id">#000</span>;</div><div class="line">&#125; @<span class="keyword">else</span> &#123;</div><div class="line">  <span class="selector-tag">background-color</span>: <span class="selector-id">#fff</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">/* Sass中简单的for循环语句*/</span></div><div class="line">@<span class="keyword">for</span> $i from <span class="number">1px</span> to <span class="number">10px</span> &#123;</div><div class="line">  .border-#&#123;i&#125; &#123;</div><div class="line">    border: $i solid blue;</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* Sass中简单的if语句 */</span></span><br><span class="line">@<span class="keyword">if</span> lightness($color) &gt; <span class="number">30%</span> &#123;</span><br><span class="line">  <span class="selector-tag">background-color</span>: <span class="selector-id">#000</span>;</span><br><span class="line">&#125; @<span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="selector-tag">background-color</span>: <span class="selector-id">#fff</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* Sass中简单的for循环语句*/</span></span><br><span class="line">@<span class="keyword">for</span> $i from <span class="number">1px</span> to <span class="number">10px</span> &#123;</span><br><span class="line">  .border-#&#123;i&#125; &#123;</span><br><span class="line">    border: $i solid blue;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>作用域不同</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">@color: #00c; /* 蓝色 */</div><div class="line"></div><div class="line"><span class="selector-id">#header</span> &#123;</div><div class="line">  @color: #c00; /* 红色 */</div><div class="line">   <span class="selector-tag">border</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> @<span class="keyword">color</span>; <span class="comment">/* 红色边框 */</span></div><div class="line">&#125;</div><div class="line"><span class="selector-id">#footer</span> &#123;</div><div class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid @color; <span class="comment">/*蓝色边框 */</span></div><div class="line">&#125;</div><div class="line">作用域在<span class="selector-tag">Sass</span>中稍有不同。在上面的代码中，当@<span class="keyword">color</span>变量变为红色后，此处之后的该变量的值，将会被重写（成为红色</div></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">@color: #00c; /* 蓝色 */</span><br><span class="line"></span><br><span class="line"><span class="selector-id">#header</span> &#123;</span><br><span class="line">  @color: #c00; /* 红色 */</span><br><span class="line">   <span class="selector-tag">border</span>: 1<span class="selector-tag">px</span> <span class="selector-tag">solid</span> @<span class="keyword">color</span>; <span class="comment">/* 红色边框 */</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-id">#footer</span> &#123;</span><br><span class="line">  <span class="attribute">border</span>: <span class="number">1px</span> solid @color; <span class="comment">/*蓝色边框 */</span></span><br><span class="line">&#125;</span><br><span class="line">作用域在<span class="selector-tag">Sass</span>中稍有不同。在上面的代码中，当@<span class="keyword">color</span>变量变为红色后，此处之后的该变量的值，将会被重写（成为红色</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>注释</p>
 <ul>
@@ -372,7 +372,7 @@
 <li>如果你想要导入一些无需LESS处理的内容，你可以使用 .css 扩展 (比如， @import ‘reset.css’;)</li>
 </ul>
 </li>
-<li>字符串插入<figure class="highlight"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">@<span class="keyword">base_url</span> = <span class="string">'http://coding.smashingmagazine.com'</span>;</div><div class="line">background-image: url("@&#123;base_url&#125;/images/background.png");</div></pre></td></tr></table></figure></li>
+<li>字符串插入<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">base_url</span> = <span class="string">'http://coding.smashingmagazine.com'</span>;</span><br><span class="line">background-image: url("@&#123;base_url&#125;/images/background.png");</span><br></pre></td></tr></table></figure></li>
 </ul>
 
       
@@ -465,9 +465,7 @@
 
       <section class="site-overview sidebar-panel sidebar-panel-active">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="KxinLin" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="KxinLin">
           <p class="site-author-name" itemprop="name">KxinLin</p>
            
               <p class="site-description motion-element" itemprop="description">每隔一段时间把笔记整理到这里来</p>
@@ -478,7 +476,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">75</span>
+                <span class="site-state-item-count">76</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -489,7 +487,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -530,10 +528,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

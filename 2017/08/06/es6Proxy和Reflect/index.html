@@ -6,10 +6,10 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -39,7 +39,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -73,21 +73,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
 
 
 
@@ -133,7 +133,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2017/08/06/es6Proxy和Reflect/"/>
+  <link rel="canonical" href="http://yoursite.com/2017/08/06/es6Proxy和Reflect/">
 
 
 
@@ -167,7 +167,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -197,7 +197,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -207,7 +207,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -217,7 +217,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -260,7 +260,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="KxinLin">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -296,7 +296,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -345,12 +345,12 @@
       
 
       
-        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">  <span class="comment">// 原始数据 即供应商</span></div><div class="line">  <span class="keyword">let</span> obj=&#123;  </div><div class="line">    time:<span class="string">'2017-03-11'</span>,</div><div class="line">    name:<span class="string">'net'</span>,</div><div class="line">    _r:<span class="number">123</span></div><div class="line">  &#125;;</div><div class="line">  <span class="comment">// 代理</span></div><div class="line">  <span class="keyword">let</span> monitor=<span class="keyword">new</span> <span class="built_in">Proxy</span>(obj,&#123;</div><div class="line">    <span class="comment">// 拦截对象属性的读取</span></div><div class="line">    get(target,key)&#123;</div><div class="line">      <span class="keyword">return</span> target[key].replace(<span class="string">'2017'</span>,<span class="string">'2018'</span>)<span class="comment">// 当读取obj的属性值时，会把值里的2017替换成2018</span></div><div class="line">    &#125;,</div><div class="line">    <span class="comment">// 拦截对象设置属性</span></div><div class="line">    set(target,key,value)&#123;</div><div class="line">      <span class="keyword">if</span>(key===<span class="string">'name'</span>)&#123;  <span class="comment">// 当修改obj.name时，会修改。name以外属性的值将不会被修改</span></div><div class="line">        <span class="keyword">return</span> target[key]=value;</div><div class="line">      &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> target[key];</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">// 拦截key in object操作</span></div><div class="line">    has(target,key)&#123;</div><div class="line">      <span class="keyword">if</span>(key===<span class="string">'name'</span>)&#123;  <span class="comment">//只暴露name属性，其他都不暴露</span></div><div class="line">        <span class="keyword">return</span> target[key]</div><div class="line">      &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">// 拦截delete</span></div><div class="line">    deleteProperty(target,key)&#123;</div><div class="line">      <span class="keyword">if</span>(key.indexOf(<span class="string">'_'</span>)&gt;<span class="number">-1</span>)&#123;  <span class="comment">//有下划线的属性会被删除</span></div><div class="line">        <span class="keyword">delete</span> target[key];</div><div class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">      &#125;<span class="keyword">else</span>&#123;</div><div class="line">        <span class="keyword">return</span> target[key]</div><div class="line">      &#125;</div><div class="line">    &#125;,</div><div class="line">    <span class="comment">// 拦截Object.keys,Object.getOwnPropertySymbols,Object.getOwnPropertyNames</span></div><div class="line">    ownKeys(target)&#123;</div><div class="line">      <span class="keyword">return</span> <span class="built_in">Object</span>.keys(target).filter(<span class="function"><span class="params">item</span>=&gt;</span>item!=<span class="string">'time'</span>)<span class="comment">//遍历所有keys 如果是time属性则不返回</span></div><div class="line">    &#125;</div><div class="line">  &#125;);</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'get'</span>,monitor.time); <span class="comment">//2018-03-11</span></div><div class="line">  monitor.time=<span class="string">'2018'</span>;</div><div class="line">  monitor.name=<span class="string">'mukewang'</span>;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'set'</span>,monitor.time,monitor);<span class="comment">// 2018-03-11  Proxy&#123;time: "2017-03-11", name: "mukewang", _r: 123&#125;</span></div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'has'</span>,<span class="string">'name'</span> <span class="keyword">in</span> monitor,<span class="string">'time'</span> <span class="keyword">in</span> monitor); <span class="comment">//true false time属性被拦截了</span></div><div class="line">  <span class="comment">// delete monitor.time;</span></div><div class="line">  <span class="comment">// console.log('delete',monitor);//Proxy &#123;time: "2017-03-11", name: "mukewang", _r: 123&#125;</span></div><div class="line">  <span class="comment">// //</span></div><div class="line">  <span class="comment">// delete monitor._r;</span></div><div class="line">  <span class="comment">// console.log('delete',monitor); //Proxy &#123;time: "2017-03-11", name: "mukewang"&#125;</span></div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'ownKeys'</span>,<span class="built_in">Object</span>.keys(monitor)); <span class="comment">// ["name", "_r"] time被过滤掉了，达到保护time属性的效果</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="comment">// 原始数据 即供应商</span></span><br><span class="line">  <span class="keyword">let</span> obj=&#123;  </span><br><span class="line">    time:<span class="string">'2017-03-11'</span>,</span><br><span class="line">    name:<span class="string">'net'</span>,</span><br><span class="line">    _r:<span class="number">123</span></span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="comment">// 代理</span></span><br><span class="line">  <span class="keyword">let</span> monitor=<span class="keyword">new</span> <span class="built_in">Proxy</span>(obj,&#123;</span><br><span class="line">    <span class="comment">// 拦截对象属性的读取</span></span><br><span class="line">    <span class="keyword">get</span>(target,key)&#123;</span><br><span class="line">      <span class="keyword">return</span> target[key].replace(<span class="string">'2017'</span>,<span class="string">'2018'</span>)<span class="comment">// 当读取obj的属性值时，会把值里的2017替换成2018</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 拦截对象设置属性</span></span><br><span class="line">    <span class="keyword">set</span>(target,key,value)&#123;</span><br><span class="line">      <span class="keyword">if</span>(key===<span class="string">'name'</span>)&#123;  <span class="comment">// 当修改obj.name时，会修改。name以外属性的值将不会被修改</span></span><br><span class="line">        <span class="keyword">return</span> target[key]=value;</span><br><span class="line">      &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> target[key];</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 拦截key in object操作</span></span><br><span class="line">    has(target,key)&#123;</span><br><span class="line">      <span class="keyword">if</span>(key===<span class="string">'name'</span>)&#123;  <span class="comment">//只暴露name属性，其他都不暴露</span></span><br><span class="line">        <span class="keyword">return</span> target[key]</span><br><span class="line">      &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 拦截delete</span></span><br><span class="line">    deleteProperty(target,key)&#123;</span><br><span class="line">      <span class="keyword">if</span>(key.indexOf(<span class="string">'_'</span>)&gt;<span class="number">-1</span>)&#123;  <span class="comment">//有下划线的属性会被删除</span></span><br><span class="line">        <span class="keyword">delete</span> target[key];</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">      &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> target[key]</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// 拦截Object.keys,Object.getOwnPropertySymbols,Object.getOwnPropertyNames</span></span><br><span class="line">    ownKeys(target)&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="built_in">Object</span>.keys(target).filter(<span class="function"><span class="params">item</span>=&gt;</span>item!=<span class="string">'time'</span>)<span class="comment">//遍历所有keys 如果是time属性则不返回</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'get'</span>,monitor.time); <span class="comment">//2018-03-11</span></span><br><span class="line">  monitor.time=<span class="string">'2018'</span>;</span><br><span class="line">  monitor.name=<span class="string">'mukewang'</span>;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'set'</span>,monitor.time,monitor);<span class="comment">// 2018-03-11  Proxy&#123;time: "2017-03-11", name: "mukewang", _r: 123&#125;</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'has'</span>,<span class="string">'name'</span> <span class="keyword">in</span> monitor,<span class="string">'time'</span> <span class="keyword">in</span> monitor); <span class="comment">//true false time属性被拦截了</span></span><br><span class="line">  <span class="comment">// delete monitor.time;</span></span><br><span class="line">  <span class="comment">// console.log('delete',monitor);//Proxy &#123;time: "2017-03-11", name: "mukewang", _r: 123&#125;</span></span><br><span class="line">  <span class="comment">// //</span></span><br><span class="line">  <span class="comment">// delete monitor._r;</span></span><br><span class="line">  <span class="comment">// console.log('delete',monitor); //Proxy &#123;time: "2017-03-11", name: "mukewang"&#125;</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'ownKeys'</span>,<span class="built_in">Object</span>.keys(monitor)); <span class="comment">// ["name", "_r"] time被过滤掉了，达到保护time属性的效果</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <a id="more"></a>
 <hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//Reflect与Proxy一样的效果</span></div><div class="line">&#123;</div><div class="line">  <span class="keyword">let</span> obj=&#123;</div><div class="line">    time:<span class="string">'2017-03-11'</span>,</div><div class="line">    name:<span class="string">'net'</span>,</div><div class="line">    _r:<span class="number">123</span></div><div class="line">  &#125;;</div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'Reflect get'</span>,<span class="built_in">Reflect</span>.get(obj,<span class="string">'time'</span>));<span class="comment">//2017-03-11</span></div><div class="line">  <span class="built_in">Reflect</span>.set(obj,<span class="string">'name'</span>,<span class="string">'mukewang'</span>);</div><div class="line">  <span class="built_in">console</span>.log(obj);<span class="comment">// &#123;time: "2017-03-11", name: "mukewang", _r: 123&#125;</span></div><div class="line">  <span class="built_in">console</span>.log(<span class="string">'has'</span>,<span class="built_in">Reflect</span>.has(obj,<span class="string">'name'</span>));<span class="comment">//true</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//Reflect与Proxy一样的效果</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">let</span> obj=&#123;</span><br><span class="line">    time:<span class="string">'2017-03-11'</span>,</span><br><span class="line">    name:<span class="string">'net'</span>,</span><br><span class="line">    _r:<span class="number">123</span></span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'Reflect get'</span>,<span class="built_in">Reflect</span>.get(obj,<span class="string">'time'</span>));<span class="comment">//2017-03-11</span></span><br><span class="line">  <span class="built_in">Reflect</span>.set(obj,<span class="string">'name'</span>,<span class="string">'mukewang'</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(obj);<span class="comment">// &#123;time: "2017-03-11", name: "mukewang", _r: 123&#125;</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'has'</span>,<span class="built_in">Reflect</span>.has(obj,<span class="string">'name'</span>));<span class="comment">//true</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h6 id="es6中尽量使用Reflect来读取或修改对象"><a href="#es6中尽量使用Reflect来读取或修改对象" class="headerlink" title="es6中尽量使用Reflect来读取或修改对象"></a><code>es6中尽量使用Reflect来读取或修改对象</code></h6><hr>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//代理很实用，可以用来检测</span></div><div class="line">&#123;</div><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">validator</span>(<span class="params">target,validator</span>)</span>&#123;</div><div class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Proxy</span>(target,&#123;</div><div class="line">      _validator:validator,</div><div class="line">      set(target,key,value,proxy)&#123;</div><div class="line">        <span class="keyword">if</span>(target.hasOwnProperty(key))&#123;</div><div class="line">          <span class="keyword">let</span> va=<span class="keyword">this</span>._validator[key];</div><div class="line">          <span class="keyword">if</span>(!!va(value))&#123;</div><div class="line">            <span class="keyword">return</span> <span class="built_in">Reflect</span>.set(target,key,value,proxy)</div><div class="line">          &#125;<span class="keyword">else</span>&#123;</div><div class="line">            <span class="keyword">throw</span> <span class="built_in">Error</span>(<span class="string">`不能设置<span class="subst">$&#123;key&#125;</span>到<span class="subst">$&#123;value&#125;</span>`</span>)</div><div class="line">          &#125;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">          <span class="keyword">throw</span> <span class="built_in">Error</span>(<span class="string">`<span class="subst">$&#123;key&#125;</span> 不存在`</span>)</div><div class="line">        &#125;</div><div class="line">      &#125;</div><div class="line">    &#125;)</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">const</span> personValidators=&#123;</div><div class="line">    name(val)&#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">typeof</span> val===<span class="string">'string'</span></div><div class="line">    &#125;,</div><div class="line">    age(val)&#123;</div><div class="line">      <span class="keyword">return</span> <span class="keyword">typeof</span> val === <span class="string">'number'</span> &amp;&amp; val&gt;<span class="number">18</span></div><div class="line">    &#125;,</div><div class="line">    mobile(val)&#123;</div><div class="line"></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</div><div class="line">    <span class="keyword">constructor</span>(name,age)&#123;</div><div class="line">      <span class="keyword">this</span>.name=name;</div><div class="line">      <span class="keyword">this</span>.age=age;</div><div class="line">      <span class="keyword">this</span>.mobile=<span class="string">'1111'</span>;</div><div class="line">      <span class="keyword">return</span> validator(<span class="keyword">this</span>,personValidators)<span class="comment">//this指的是Person的实例</span></div><div class="line">    &#125;</div><div class="line">  &#125;</div><div class="line">  <span class="keyword">const</span> person=<span class="keyword">new</span> Person(<span class="string">'lilei'</span>,<span class="number">30</span>);</div><div class="line">  <span class="built_in">console</span>.info(person);</div><div class="line">  person.name=<span class="string">'Han mei mei'</span>;</div><div class="line">  <span class="built_in">console</span>.info(person);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//代理很实用，可以用来检测</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="function"><span class="keyword">function</span> <span class="title">validator</span>(<span class="params">target,validator</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Proxy</span>(target,&#123;</span><br><span class="line">      _validator:validator,</span><br><span class="line">      <span class="keyword">set</span>(target,key,value,proxy)&#123;</span><br><span class="line">        <span class="keyword">if</span>(target.hasOwnProperty(key))&#123;</span><br><span class="line">          <span class="keyword">let</span> va=<span class="keyword">this</span>._validator[key];</span><br><span class="line">          <span class="keyword">if</span>(!!va(value))&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">Reflect</span>.set(target,key,value,proxy)</span><br><span class="line">          &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            <span class="keyword">throw</span> <span class="built_in">Error</span>(<span class="string">`不能设置<span class="subst">$&#123;key&#125;</span>到<span class="subst">$&#123;value&#125;</span>`</span>)</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">          <span class="keyword">throw</span> <span class="built_in">Error</span>(<span class="string">`<span class="subst">$&#123;key&#125;</span> 不存在`</span>)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">const</span> personValidators=&#123;</span><br><span class="line">    name(val)&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">typeof</span> val===<span class="string">'string'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    age(val)&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="keyword">typeof</span> val === <span class="string">'number'</span> &amp;&amp; val&gt;<span class="number">18</span></span><br><span class="line">    &#125;,</span><br><span class="line">    mobile(val)&#123;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="class"><span class="keyword">class</span> <span class="title">Person</span></span>&#123;</span><br><span class="line">    <span class="keyword">constructor</span>(name,age)&#123;</span><br><span class="line">      <span class="keyword">this</span>.name=name;</span><br><span class="line">      <span class="keyword">this</span>.age=age;</span><br><span class="line">      <span class="keyword">this</span>.mobile=<span class="string">'1111'</span>;</span><br><span class="line">      <span class="keyword">return</span> validator(<span class="keyword">this</span>,personValidators)<span class="comment">//this指的是Person的实例</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">const</span> person=<span class="keyword">new</span> Person(<span class="string">'lilei'</span>,<span class="number">30</span>);</span><br><span class="line">  <span class="built_in">console</span>.info(person);</span><br><span class="line">  person.name=<span class="string">'Han mei mei'</span>;</span><br><span class="line">  <span class="built_in">console</span>.info(person);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -440,7 +440,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -451,9 +451,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="KxinLin" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="KxinLin">
           <p class="site-author-name" itemprop="name">KxinLin</p>
            
               <p class="site-description motion-element" itemprop="description">每隔一段时间把笔记整理到这里来</p>
@@ -464,7 +462,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">75</span>
+                <span class="site-state-item-count">76</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -475,7 +473,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -532,10 +530,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

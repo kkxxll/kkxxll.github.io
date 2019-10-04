@@ -6,10 +6,10 @@
 
 
 <html class="theme-next mist use-motion" lang="zh-Hans">
-<head>
-  <meta charset="UTF-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
 
 
@@ -20,8 +20,8 @@
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform" />
-<meta http-equiv="Cache-Control" content="no-siteapp" />
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
 
 
 
@@ -39,7 +39,7 @@
 
   
   
-  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
 
 
 
@@ -73,21 +73,21 @@
 
 
 
-<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
 
-<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css" />
-
-
-  <meta name="keywords" content="Hexo, NexT" />
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
+  <meta name="keywords" content="Hexo, NexT">
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2" />
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
 
 
 
@@ -133,7 +133,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/11/19/作用域和闭包/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/11/19/作用域和闭包/">
 
 
 
@@ -167,7 +167,7 @@
     
 
     <div class="custom-logo-site-title">
-      <a href="/"  class="brand" rel="start">
+      <a href="/" class="brand" rel="start">
         <span class="logo-line-before"><i></i></span>
         <span class="site-title">博客</span>
         <span class="logo-line-after"><i></i></span>
@@ -197,7 +197,7 @@
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
             
             首页
           </a>
@@ -207,7 +207,7 @@
         <li class="menu-item menu-item-categories">
           <a href="/categories/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
             
             分类
           </a>
@@ -217,7 +217,7 @@
         <li class="menu-item menu-item-archives">
           <a href="/archives/" rel="section">
             
-              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
             
             归档
           </a>
@@ -260,7 +260,7 @@
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="KxinLin">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -296,7 +296,7 @@
           </span>
 
           
-            <span class="post-category" >
+            <span class="post-category">
             
               <span class="post-meta-divider">|</span>
             
@@ -362,71 +362,71 @@
 </li>
 </ul>
 <a id="more"></a>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">//全局中或某个函数体中，程序会把变量声明提前，并且用undefined占位(即赋值)</div><div class="line">//也会把函数声明提前</div><div class="line">console.log(a);//undefined</div><div class="line">var a = 100;  </div><div class="line">fn(<span class="string">'kk'</span>);//kk 20</div><div class="line"><span class="keyword">function</span> fn(name) &#123;</div><div class="line">    age = 20;</div><div class="line">    console.log(name, age);</div><div class="line">    var age;</div><div class="line">&#125;</div><div class="line"></div><div class="line">//详细运行过程如下</div><div class="line">// var a;</div><div class="line">// //函数fn也被提前;</div><div class="line">// console.log(a);//因为只是声明提前，赋值没有提前,所有undedined</div><div class="line">// a = 100;</div><div class="line">// fn(<span class="string">'kk'</span>);</div><div class="line">///////////</div><div class="line">// <span class="keyword">function</span> fn(name) &#123;</div><div class="line">//  var age;//同理，声明被提前 name也被赋值</div><div class="line">//  console.log(name, age)</div><div class="line">// &#125;</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">fn1();//正常执行</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">fn1</span></span>() &#123;</div><div class="line"></div><div class="line">&#125;</div><div class="line">//这里fn2声明被提前，还没有赋值，所有报错:undefined</div><div class="line">fn2();</div><div class="line">var fn2 = <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">var a = 10;</div><div class="line">console.log(this.a);//10</div><div class="line"><span class="keyword">function</span> fn(name) &#123;</div><div class="line">    var a = 1;</div><div class="line">    console.log(this.a);//this是运行环境的this，而不是定义环境的this</div><div class="line">    console.log(arguments);//函数参数的集合体</div><div class="line">&#125;</div><div class="line">fn(<span class="string">'kk'</span>);//10;[<span class="string">"kk"</span>,callee:....]</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//全局中或某个函数体中，程序会把变量声明提前，并且用undefined占位(即赋值)</span><br><span class="line">//也会把函数声明提前</span><br><span class="line">console.log(a);//undefined</span><br><span class="line">var a = 100;  </span><br><span class="line">fn(<span class="string">'kk'</span>);//kk 20</span><br><span class="line"><span class="keyword">function</span> fn(name) &#123;</span><br><span class="line">    age = 20;</span><br><span class="line">    console.log(name, age);</span><br><span class="line">    var age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//详细运行过程如下</span><br><span class="line">// var a;</span><br><span class="line">// //函数fn也被提前;</span><br><span class="line">// console.log(a);//因为只是声明提前，赋值没有提前,所有undedined</span><br><span class="line">// a = 100;</span><br><span class="line">// fn(<span class="string">'kk'</span>);</span><br><span class="line">///////////</span><br><span class="line">// <span class="keyword">function</span> fn(name) &#123;</span><br><span class="line">//  var age;//同理，声明被提前 name也被赋值</span><br><span class="line">//  console.log(name, age)</span><br><span class="line">// &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fn1();//正常执行</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">fn1</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line">//这里fn2声明被提前，还没有赋值，所有报错:undefined</span><br><span class="line">fn2();</span><br><span class="line">var fn2 = <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">var a = 10;</span><br><span class="line">console.log(this.a);//10</span><br><span class="line"><span class="keyword">function</span> fn(name) &#123;</span><br><span class="line">    var a = 1;</span><br><span class="line">    console.log(this.a);//this是运行环境的this，而不是定义环境的this</span><br><span class="line">    console.log(arguments);//函数参数的集合体</span><br><span class="line">&#125;</span><br><span class="line">fn(<span class="string">'kk'</span>);//10;[<span class="string">"kk"</span>,callee:....]</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>this 要在执行时才能确认值，定义时无法确认(所以程序中的bug在执行时才会报错，定义时无法发现)</p>
 <ul>
 <li><p>作为构造函数执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var Foo = <span class="keyword">function</span>(name) &#123;</div><div class="line">    //this = &#123;&#125;</div><div class="line">    this.name = name;</div><div class="line">    //<span class="built_in">return</span> this;</div><div class="line">&#125;</div><div class="line">var f = new Foo(<span class="string">'kk'</span>);</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var Foo = <span class="keyword">function</span>(name) &#123;</span><br><span class="line">    //this = &#123;&#125;</span><br><span class="line">    this.name = name;</span><br><span class="line">    //<span class="built_in">return</span> this;</span><br><span class="line">&#125;</span><br><span class="line">var f = new Foo(<span class="string">'kk'</span>);</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>作为对象属性执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var obj = &#123;</div><div class="line">    name:<span class="string">'A'</span>,</div><div class="line">    printName: <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">        console.log(this.name);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">obj.printName();</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var obj = &#123;</span><br><span class="line">    name:<span class="string">'A'</span>,</span><br><span class="line">    printName: <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        console.log(this.name);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">obj.printName();</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>作为普通函数执行</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">fn</span></span>() &#123;</div><div class="line">    console.log(this);</div><div class="line">&#125;</div><div class="line">fn();//window</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">fn</span></span>() &#123;</span><br><span class="line">    console.log(this);</span><br><span class="line">&#125;</span><br><span class="line">fn();//window</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>call apply bind</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> fn(name) &#123;</div><div class="line">    this.name = name;</div><div class="line">    console.log(this.name);</div><div class="line">&#125;</div><div class="line">fn.call(&#123;age:20&#125;,<span class="string">'kk'</span>);//kk</div><div class="line">fn.apply(&#123;age:20&#125;,[<span class="string">'kk'</span>]);//kk</div><div class="line">fn();//undefined</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> fn(name) &#123;</span><br><span class="line">    this.name = name;</span><br><span class="line">    console.log(this.name);</span><br><span class="line">&#125;</span><br><span class="line">fn.call(&#123;age:20&#125;,<span class="string">'kk'</span>);//kk</span><br><span class="line">fn.apply(&#123;age:20&#125;,[<span class="string">'kk'</span>]);//kk</span><br><span class="line">fn();//undefined</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var fn = <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">    console.log(this.name);</div><div class="line">&#125;.<span class="built_in">bind</span>(&#123;name:<span class="string">'kk'</span>&#125;)//<span class="built_in">bind</span> 必须是函数表达式，函数声明是不可以的</div><div class="line">fn();//kk</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">var fn = <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">    console.log(this.name);</span><br><span class="line">&#125;.<span class="built_in">bind</span>(&#123;name:<span class="string">'kk'</span>&#125;)//<span class="built_in">bind</span> 必须是函数表达式，函数声明是不可以的</span><br><span class="line">fn();//kk</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>作用域</p>
 <ul>
 <li><p>没有块级作用域</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span>(<span class="literal">true</span>) &#123;</div><div class="line">    var name = <span class="string">"kk"</span>;</div><div class="line">&#125;</div><div class="line">console.log(name);//kk</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">    var name = <span class="string">"kk"</span>;</span><br><span class="line">&#125;</span><br><span class="line">console.log(name);//kk</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>只有函数和全局作用域</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">var a = <span class="string">'outer'</span>;</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">fn</span></span>() &#123;</div><div class="line">    var a = <span class="string">'inner'</span>;</div><div class="line">    console.log(a);//inner</div><div class="line">&#125;</div><div class="line">console.log(a);//outer</div><div class="line">fn();</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var a = <span class="string">'outer'</span>;</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">fn</span></span>() &#123;</span><br><span class="line">    var a = <span class="string">'inner'</span>;</span><br><span class="line">    console.log(a);//inner</span><br><span class="line">&#125;</span><br><span class="line">console.log(a);//outer</span><br><span class="line">fn();</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 <li><p>作用域链 父级作用域是在定义是决定的，而不是运行时决定</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">var g = <span class="string">'global'</span></div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">fn</span></span>() &#123;</div><div class="line">    //g为<span class="string">'自由变量'</span>，即当前作用域没有的变量</div><div class="line">    console.log(g);//global 从父级中找，当前作用域的父级作用域是全局作用域</div><div class="line">&#125;</div><div class="line">fn();</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">var g = <span class="string">'global'</span></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">fn</span></span>() &#123;</span><br><span class="line">    //g为<span class="string">'自由变量'</span>，即当前作用域没有的变量</span><br><span class="line">    console.log(g);//global 从父级中找，当前作用域的父级作用域是全局作用域</span><br><span class="line">&#125;</span><br><span class="line">fn();</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>闭包 闭包的使用场景两种</p>
 <ul>
 <li><p>函数作文返回值</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">F1</span></span>() &#123;</div><div class="line">    var a = 100;</div><div class="line">    <span class="built_in">return</span> <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">        console.log(a);</div><div class="line">        //a是自由变量，所以会从父级寻找值</div><div class="line">        //又因为函数的父级作用域是定义时决定，而不是运行时决定</div><div class="line">        //所以父级作用域是F1,a为100</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var f1 = F1();</div><div class="line">var a = 200;</div><div class="line">f1();//100</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">F1</span></span>() &#123;</span><br><span class="line">    var a = 100;</span><br><span class="line">    <span class="built_in">return</span> <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        console.log(a);</span><br><span class="line">        //a是自由变量，所以会从父级寻找值</span><br><span class="line">        //又因为函数的父级作用域是定义时决定，而不是运行时决定</span><br><span class="line">        //所以父级作用域是F1,a为100</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var f1 = F1();</span><br><span class="line">var a = 200;</span><br><span class="line">f1();//100</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>函数参数传递</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line">//函数作为参数到另一个函数里执行</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">F1</span></span>() &#123;</div><div class="line">    var a = 100;</div><div class="line">    <span class="built_in">return</span> <span class="function"><span class="title">function</span></span>() &#123;</div><div class="line">        console.log(a);</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var f1 = F1();</div><div class="line"><span class="keyword">function</span> F2(fn) &#123;</div><div class="line">    var a = 200;</div><div class="line">    fn();</div><div class="line">&#125;</div><div class="line">F2(f1);//100</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">//函数作为参数到另一个函数里执行</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">F1</span></span>() &#123;</span><br><span class="line">    var a = 100;</span><br><span class="line">    <span class="built_in">return</span> <span class="function"><span class="title">function</span></span>() &#123;</span><br><span class="line">        console.log(a);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var f1 = F1();</span><br><span class="line"><span class="keyword">function</span> F2(fn) &#123;</span><br><span class="line">    var a = 200;</span><br><span class="line">    fn();</span><br><span class="line">&#125;</span><br><span class="line">F2(f1);//100</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </li>
 </ul>
 <h6 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h6><ul>
 <li><p>说一下对变量提升的理解</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">变量定义</div><div class="line">函数声明(注意和函数表达式的区别)</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">变量定义</span><br><span class="line">函数声明(注意和函数表达式的区别)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>说明this几种不同的使用场景</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">4种看前面</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">4种看前面</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>创建10个a标签 点击时候打印出对应的序号</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//错误</div><div class="line">var i,a;</div><div class="line"><span class="keyword">for</span>(i=0;i&lt;10;i++) &#123;</div><div class="line">    a = document.createElement(<span class="string">'a'</span>);</div><div class="line">    a.innerHTML = i;</div><div class="line">    a.addEventListener(<span class="string">'click'</span>, <span class="keyword">function</span>(e) &#123;//每个i对应一个click共10个</div><div class="line">        e.preventDefault();</div><div class="line">        console.log(i);//无论点击哪个结果都是 10</div><div class="line">        //因为 i 是自由变量，到父级(全局作用域)寻找i的值，而这时循环结束</div><div class="line">        //i已经是10</div><div class="line">    &#125;)</div><div class="line">    document.body.appendChild(a);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//错误</span><br><span class="line">var i,a;</span><br><span class="line"><span class="keyword">for</span>(i=0;i&lt;10;i++) &#123;</span><br><span class="line">    a = document.createElement(<span class="string">'a'</span>);</span><br><span class="line">    a.innerHTML = i;</span><br><span class="line">    a.addEventListener(<span class="string">'click'</span>, <span class="keyword">function</span>(e) &#123;//每个i对应一个click共10个</span><br><span class="line">        e.preventDefault();</span><br><span class="line">        console.log(i);//无论点击哪个结果都是 10</span><br><span class="line">        //因为 i 是自由变量，到父级(全局作用域)寻找i的值，而这时循环结束</span><br><span class="line">        //i已经是10</span><br><span class="line">    &#125;)</span><br><span class="line">    document.body.appendChild(a);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">//正确</div><div class="line">var i;</div><div class="line"><span class="keyword">for</span>(i=0;i&lt;10;i++) &#123;</div><div class="line">    (<span class="keyword">function</span> (i)&#123;</div><div class="line">        var a = document.createElement(<span class="string">'a'</span>);</div><div class="line">        a.innerHTML = i;</div><div class="line">        a.addEventListener(<span class="string">'click'</span>, <span class="keyword">function</span>(e) &#123;//每个i对应一个click共10个</div><div class="line">            e.preventDefault();</div><div class="line">            console.log(i);</div><div class="line">            //i是自由变量，从父级(自执行函数)中找值，由于i作为参数传递</div><div class="line">            //所以从参数中取i的值，分别是0~9</div><div class="line">        &#125;)</div><div class="line">        document.body.appendChild(a);</div><div class="line">    &#125;)(i);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//正确</span><br><span class="line">var i;</span><br><span class="line"><span class="keyword">for</span>(i=0;i&lt;10;i++) &#123;</span><br><span class="line">    (<span class="keyword">function</span> (i)&#123;</span><br><span class="line">        var a = document.createElement(<span class="string">'a'</span>);</span><br><span class="line">        a.innerHTML = i;</span><br><span class="line">        a.addEventListener(<span class="string">'click'</span>, <span class="keyword">function</span>(e) &#123;//每个i对应一个click共10个</span><br><span class="line">            e.preventDefault();</span><br><span class="line">            console.log(i);</span><br><span class="line">            //i是自由变量，从父级(自执行函数)中找值，由于i作为参数传递</span><br><span class="line">            //所以从参数中取i的值，分别是0~9</span><br><span class="line">        &#125;)</span><br><span class="line">        document.body.appendChild(a);</span><br><span class="line">    &#125;)(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>如何理解作用域</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">自由变量</div><div class="line">作用域链</div><div class="line">闭包的两个场景</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">自由变量</span><br><span class="line">作用域链</span><br><span class="line">闭包的两个场景</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>实际开发中闭包的应用</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div></pre></td><td class="code"><pre><div class="line">//闭包实际应用中主要用于封装变量，收敛权限</div><div class="line"><span class="keyword">function</span> <span class="function"><span class="title">isFirstLoad</span></span>() &#123;</div><div class="line">    var _list = [];</div><div class="line">    <span class="built_in">return</span> <span class="keyword">function</span>(id) &#123;</div><div class="line">        <span class="keyword">if</span>(_list.indexOf(id)&gt;=0)&#123;</div><div class="line">            <span class="built_in">return</span> <span class="literal">false</span>;</div><div class="line">        &#125;<span class="keyword">else</span>&#123;</div><div class="line">            _list.push(id)</div><div class="line">            <span class="built_in">return</span> <span class="literal">true</span>;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">var firstLoad = isFirstLoad();</div><div class="line">console.log(firstLoad(10));//<span class="literal">true</span></div><div class="line">console.log(firstLoad(10));//<span class="literal">false</span></div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//闭包实际应用中主要用于封装变量，收敛权限</span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">isFirstLoad</span></span>() &#123;</span><br><span class="line">    var _list = [];</span><br><span class="line">    <span class="built_in">return</span> <span class="keyword">function</span>(id) &#123;</span><br><span class="line">        <span class="keyword">if</span>(_list.indexOf(id)&gt;=0)&#123;</span><br><span class="line">            <span class="built_in">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">            _list.push(id)</span><br><span class="line">            <span class="built_in">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">var firstLoad = isFirstLoad();</span><br><span class="line">console.log(firstLoad(10));//<span class="literal">true</span></span><br><span class="line">console.log(firstLoad(10));//<span class="literal">false</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -518,7 +518,7 @@
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
             文章目录
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -529,9 +529,7 @@
 
       <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image"
-               src="/images/avatar.gif"
-               alt="KxinLin" />
+          <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="KxinLin">
           <p class="site-author-name" itemprop="name">KxinLin</p>
            
               <p class="site-description motion-element" itemprop="description">每隔一段时间把笔记整理到这里来</p>
@@ -542,7 +540,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">75</span>
+                <span class="site-state-item-count">76</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -553,7 +551,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">27</span>
+                <span class="site-state-item-count">26</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -610,10 +608,10 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright" >
+        <div class="copyright">
   
   &copy;  2016 - 
-  <span itemprop="copyrightYear">2017</span>
+  <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
